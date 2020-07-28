@@ -1,0 +1,98 @@
+.bkg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 120px 40px 100px 40px;
+
+    .bkg {
+        height: calc(100vh - 220px);
+        width: calc(100vw - 80px);
+        background-position: center;
+        background-size: cover;
+        background-image: url(https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80);
+    }
+}
+
+.home {
+    position: relative;
+
+
+    .hero {
+
+        .heroScroll-wrapper {
+            // border: 2px solid red;
+            margin-top: 50vh;
+        }
+
+        .container-flex-column {
+
+
+            .hero-header {
+                z-index: 1;
+            }
+
+            .hero-header {
+                // opacity: 0;
+                // transition: opacity 0.6s 2s ease;
+                // &.animated{
+                //     opacity: 1;
+                // }
+            }
+
+            .hero-header {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto 0;
+
+
+                h1 {
+                    transform: translateY(-50%);
+                    display: flex;
+                    margin: 0;
+                    padding-left: 50px;
+
+                    // border: 2px solid orange;
+                    .letter {
+                        font-size: 9.5rem;
+                        align-self: center;
+                        display: inline-block;
+                        -webkit-text-stroke: 2px $white;
+                        text-align: left;
+                        -webkit-text-fill-color: initial;
+                        color: transparent;
+                        // letter animation properties
+                        transition: opacity 0.4s ease-in, color 0.4s ease-in;
+
+                        // transform: scale(0.9) translateY(7%);
+                        // opacity: 0;
+
+                        &.animated {
+                            transition: all 0.4s ease-in;
+                            opacity: 1;
+                        }
+
+                        &.animatedFilled {
+                            transition: all 0.4s ease-in;
+                            color: white;
+                        }
+
+                        &.animatedInView {
+                            opacity: 1;
+                        }
+
+                        @media screen and (min-width: 1200px) {
+                            font-size: 15vw;
+                        }
+
+                        @media screen and (max-width: 640px) {
+                            font-size: 6.5rem;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

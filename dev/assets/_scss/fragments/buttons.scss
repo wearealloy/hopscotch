@@ -17,8 +17,8 @@ input[type="submit"] {
 	// font-weight: bold;
 	color: $white;
     text-decoration: none;
-    font-family: $ff-serif;
 	text-transform: uppercase;
+	-webkit-appearance: unset;
 	
 	@media screen and (min-width: $tablet-BP) {
 		font-size: 24px;	
@@ -26,7 +26,7 @@ input[type="submit"] {
 
 	&:hover,
 	&:focus {
-		// background-color: $darkRed;
+		outline: none;
 	}
 
 }
