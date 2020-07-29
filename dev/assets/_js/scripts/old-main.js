@@ -22,21 +22,58 @@ var trigger = createTrigger(tweenHero);
 
 //menu anim
 $('#menu-button').click(function () {
-    openNav($(this));
-})
+    $(this).toggleClass('open');
+    $('.logo-container').toggleClass('open');
+    $('.social-bar').toggleClass('open');
+    $('.button-container').toggleClass('open');
+    $(this).parent().toggleClass('open');
+    if ($(this).hasClass('open')) {
 
-function openNav(nav){
-    $('.toggle-open').toggleClass('open');
-    if ($(nav).hasClass('open')) {
-        gsap.set('body', {overflow: 'hidden'});
         gsap.to('div.modal', {alpha: 1, visibility: 'visible', duration: 0.5})
+
+        // gsap.to('#menu-button div:nth-child(1)', {xPercent: 50, alpha: 0, duration: 0.3, onComplete: () => {
+        //     $('#menu-button div:nth-child(1)').hide();
+        //     $('#menu-button div:nth-child(2)').hide();
+        // }})
+        // gsap.to('#menu-button div:nth-child(2)', {xPercent: -50, alpha: 0, duration: 0.3})
+
+        // gsap.fromTo('#menu-button div:nth-child(3)',{xPercent: 50, alpha: 0}, {xPercent: 0, alpha: 1, duration: 0.3, delay: 0.3, onStart: ()=>{
+        //     $('#menu-button div:nth-child(3)').show();
+        //     $('#menu-button div:nth-child(4)').show();
+        // }})
+        // gsap.fromTo('#menu-button div:nth-child(4)',{xPercent: -50, alpha: 0}, {xPercent: 0, alpha: 1, duration: 0.3, delay: 0.3})
     } else {
         gsap.to('div.modal', {alpha: 0, duration: 0.5, onComplete: ()=>{
-            gsap.set('body', {overflow: 'auto'});
             gsap.set('div.modal', {visibility: 'hidden'})
         }})
+
+        // gsap.to('#menu-button div:nth-child(3)', {xPercent: 50, alpha: 0, duration: 0.3, onComplete: () =>{
+        //     $('#menu-button div:nth-child(3)').hide();
+        //     $('#menu-button div:nth-child(4)').hide();
+        // }})
+        // gsap.to('#menu-button div:nth-child(4)', {xPercent: -50, alpha: 0, duration: 0.3})
+
+        // gsap.to('#menu-button div:nth-child(1)', {xPercent: 0, alpha: 1, duration: 0.3, delay: 0.3, onStart: ()=>{
+        //     $('#menu-button div:nth-child(1)').show();
+        //     $('#menu-button div:nth-child(2)').show();
+        // }})
+        // gsap.to('#menu-button div:nth-child(2)', {xPercent: 0, alpha: 1, duration: 0.3, delay: 0.3})
     }
-}
+
+})
+
+// $('#menu-button').mouseenter(function(){
+//     gsap.to('#menu-button div:nth-child(1)', {xPercent: 21, duration: 0.3})
+//     gsap.to('#menu-button div:nth-child(3)', {xPercent: 21, duration: 0.3})
+//     gsap.to('#menu-button div:nth-child(2)', {xPercent: -21, duration: 0.3})
+//     gsap.to('#menu-button div:nth-child(4)', {xPercent: -21, duration: 0.3})
+// })
+// $('#menu-button').mouseleave(function(){
+//     gsap.to('#menu-button div:nth-child(1)', {xPercent: 0, duration: 0.3})
+//     gsap.to('#menu-button div:nth-child(3)', {xPercent: 0, duration: 0.3})
+//     gsap.to('#menu-button div:nth-child(2)', {xPercent: 0, duration: 0.3})
+//     gsap.to('#menu-button div:nth-child(4)', {xPercent: 0, duration: 0.3})
+// })
 
 
 //letters animation
@@ -91,10 +128,7 @@ function updateVars() {
     trigger = createTrigger(tweenHero);
 }
 
-
 function createTween(){
-    var headerPosition = $(window).height()/2 - $('#hero-header-animation').height()/2;
-    gsap.set('#hero-header-animation', {y: headerPosition})
     return gsap.to("#hero-header-animation", {
         x: (titleWidth - headerEndWidth) * -1
     });
@@ -102,17 +136,14 @@ function createTween(){
 
 function createTrigger(tween){
     return ScrollTrigger.create({
-        animation: tween,
-        trigger: ".heroScroll-wrapper",
-        start: `top top`,
+        animation: tweenHero,
+        trigger: ".container-flex-column",
+        start: `top 50%`,
         end: `+=${titleWidth}`,
         scrub: true,
         pin: true,
-        onLeave: ()=>{
-            openNav($('#menu-button'));
-        },
         // markers: true,
-        id: 'header'
+        id: "scrub"
     })
 }
 
