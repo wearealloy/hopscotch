@@ -16,7 +16,7 @@
 	
 	{% include './modals/google-analytics.html' %}
 
-	{#{% include './modals/meta.html' %}#}
+	{% include './modals/meta.html' %}
 
 	<link rel="stylesheet" href="https://use.typekit.net/cor4vzl.css">
 	<link rel="stylesheet" {%if siteUrl %} href="{{ siteUrl }}assets/css/main.css" {% else %} href="../web/assets/css/main.css"{% endif %}>
@@ -25,6 +25,8 @@
 </head>
 <body>
 
+	{% include './sections/loading-screen.html' %}
+	{% include './sections/sign-up.html' %}
 	{% include './navigation/main-nav.html' %}
 	{% block content %}
     {% endblock %}

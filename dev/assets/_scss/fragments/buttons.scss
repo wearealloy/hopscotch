@@ -10,7 +10,8 @@ input[type="submit"] {
 	box-shadow: none;
 	border: none;
 	border-radius: 0;
-	position: relative;
+    position: relative;
+    font-family: $ff-sansSerif;
 	// background-color: $red;
 	font-size: 20px;
 	letter-spacing: 2px;
@@ -39,39 +40,32 @@ input[type="submit"] {
     position: fixed;
     top: 30px;
     left: 40px;
-    z-index: 999;
-
+    z-index: 980;
+    
     #logo {
-        width: 60px;
-        fill: white;
+        width: 150px;
         transition: fill 0s linear;
+
+        polygon{
+            fill: white;
+        }
 
         path {
             transition: fill 0s linear;
-
-            &:nth-child(1) {
-                fill: black;
-            }
-
-            &:nth-child(2) {
-                fill: rgba(0, 0, 0, 1);
-                ;
-            }
+            fill: black;
         }
     }
 
     &.open {
         #logo {
-            fill: black;
-
+    
+            polygon{
+                fill: black;
+            }
+    
             path {
-                &:nth-child(1) {
-                    fill: white;
-                }
-
-                &:nth-child(2) {
-                    fill: rgba(0, 0, 0, 0.01);
-                }
+                transition: fill 0s linear;
+                fill: white;
             }
         }
     }
@@ -87,8 +81,9 @@ input[type="submit"] {
     right: 40px;
     background-color: transparent;
     cursor: pointer;
-    z-index: 999;
+    z-index: 980;
     padding: 0;
+    margin: 0;
 
     div {
         line-height: 1;
@@ -187,13 +182,8 @@ input[type="submit"] {
     position: fixed;
     bottom: 30px;
     left: 40px;
-    z-index: 100;
     display: flex;
-
-
-    @media screen and (min-width: $mobile-BP) {
-        z-index: 999;
-    }
+    z-index: 980;
 
     &.open {
         a {
@@ -228,16 +218,17 @@ input[type="submit"] {
 		BUTTONS - PLAY SQUARE BUTTON
 \*----------------------------------------------------------------*/
 
-div.button-container {
+div.button-container-threeD {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    width: 140px;
-    height: 40px;
-    z-index: 100;
+    width: 160px;
+    height: 30px;
+    z-index: 980;
 
     @media screen and (min-width: $mobile-BP) {
-        z-index: 999;
+        width: 180px;
+        height: 35px;
     }
 
     &.open {
@@ -271,13 +262,18 @@ div.button-container {
         left: 50%;
         transform: translate(-50%, -50%);
         text-decoration: none;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;
         transition: top .5s, right .5s, left .5s, bottom .5s, height .5s, width .5s, margin-left .5s, margin-top .5s;
         background-color: #fff;
         border-top: 1px solid black;
         border-right: 1px solid black;
+        cursor: pointer;
+
+        @media screen and (min-width: $mobile-BP) {
+            font-size: 15px;
+        }
 
         .bottom,
         .left {
@@ -356,8 +352,12 @@ div.button-container {
                 }
             }
 		}
-		
-		&:active {
+    }
+}
+
+div.button-container-threeD:not(#news-close){
+    .play-button{
+        &:active {
             margin-left: -10px;
             margin-top: 10px;
 

@@ -12,27 +12,92 @@ gsap.registerPlugin(ScrollTrigger);
 letterWrapping();
 
 
+/*----------------------------------------------------------------*\
+		LOADING SREEN ANIMATION
+\*----------------------------------------------------------------*/
+gsap.set('html', {overflow: 'hidden'});
+
+gsap.timeline({repeat: 3, repeatDelay: 0, onStart: function(){
+    gsap.to('.loading-bar', {scaleX: 1, duration: this.totalDuration(), ease: 'linear'});
+}, onComplete: function(){
+    gsap.set('html', {overflow: 'auto'});
+    gsap.to('.loading-screen', {alpha: 0, duration: 0.4, delay: 0.2, onComplete: function(){
+        $('.loading-screen').hide();
+    }});
+}})
+.to('.logo-one', {display: 'none', duration: 0.12})
+.to('.logo-two', {display: 'block', duration: 0.12})
+.to('.logo-two', {display: 'none', duration: 0.12})
+.to('.logo-three', {display: 'block', duration: 0.12})
+.to('.logo-three', {display: 'none', duration: 0.12})
+.to('.logo-four', {display: 'block', duration: 0.12})
+.to('.logo-four', {display: 'none', duration: 0.12})
+.to('.logo-one', {display: 'block', duration: 0.12});
+
+/*----------------------------------------------------------------*\
+		NEWSLETTER
+\*----------------------------------------------------------------*/
+
+var signUpmodal = $('#signUp-modal');
+
+$('#news-open').click(function(){
+    signUpmodal.toggleClass('open');
+
+    if($('#menu-button').hasClass('open')){
+        signUpmodal.toggleClass('black-modal');
+    }
+
+    if(signUpmodal.hasClass('open')){
+        gsap.set('html', {overflow: 'hidden'});
+        gsap.set(signUpmodal, {display: 'flex'});
+        gsap.to(signUpmodal, {alpha: 1, duration: 0.3})
+    }else{
+        gsap.set('html', {overflow: 'auto'});
+        gsap.to(signUpmodal, {alpha: 0, duration: 0.3, onComplete: function(){
+            signUpmodal.hide();
+        }})
+    }
+})
+
+$('#news-close').click(function(){
+    gsap.set('html', {overflow: 'auto'});
+    signUpmodal.removeClass('open black-modal');
+    gsap.to(signUpmodal, {alpha: 0, duration: 0.2, onComplete: function(){
+        signUpmodal.hide();
+    }})
+})
+
+
+/*----------------------------------------------------------------*\
+        HEADER ANIMATION
+\*----------------------------------------------------------------*/
+
 var titleWidth = $('#hero-header-animation').width();
 var windowWidht = $(window).width();
 
-// var headerEndWidth = (windowWidht / (windowWidht > 640 ? 1.5 : 0.85)) - 100;
-var headerEndWidth = (windowWidht / 1.5) - 100;
+// var headerEndWidth = (windowWidht / 1.5) - 100;
+var headerEndWidth = windowWidht - 100
 var tweenHero = createTween();
 var trigger = createTrigger(tweenHero);
+var menuButtonClicked = false;
 
 //menu anim
 $('#menu-button').click(function () {
-    openNav($(this));
+    $('.toggle-open').toggleClass('open');
+    openNav($(this), true);
 })
 
-function openNav(nav){
-    $('.toggle-open').toggleClass('open');
+function openNav(nav, clickedFromButton){
     if ($(nav).hasClass('open')) {
-        gsap.set('body', {overflow: 'hidden'});
+        if(clickedFromButton){
+            gsap.set('html', {overflow: 'hidden'});
+        }
         gsap.to('div.modal', {alpha: 1, visibility: 'visible', duration: 0.5})
     } else {
         gsap.to('div.modal', {alpha: 0, duration: 0.5, onComplete: ()=>{
-            gsap.set('body', {overflow: 'auto'});
+            if(clickedFromButton){
+                gsap.set('html', {overflow: 'auto'});
+            }
             gsap.set('div.modal', {visibility: 'hidden'})
         }})
     }
@@ -93,10 +158,11 @@ function updateVars() {
 
 
 function createTween(){
-    var headerPosition = $(window).height()/2 - $('#hero-header-animation').height()/2;
-    gsap.set('#hero-header-animation', {y: headerPosition})
+    // var headerPosition = $(window).height()/2 - $('#hero-header-animation').height()/2;
+    // gsap.set('#hero-header-animation', {y: headerPosition})
     return gsap.to("#hero-header-animation", {
-        x: (titleWidth - headerEndWidth) * -1
+        x: (titleWidth - headerEndWidth) * -1,
+        ease: 'linear'
     });
 }
 
@@ -104,12 +170,18 @@ function createTrigger(tween){
     return ScrollTrigger.create({
         animation: tween,
         trigger: ".heroScroll-wrapper",
-        start: `top top`,
+        start: `top`,
         end: `+=${titleWidth}`,
+        // end: `600px 700px`,
         scrub: true,
         pin: true,
         onLeave: ()=>{
+            $('.toggle-open').addClass('open');
             openNav($('#menu-button'));
+        },
+        onEnterBack: ()=>{
+            $('.toggle-open').removeClass('open');
+            openNav($('#menu-button'), false);
         },
         // markers: true,
         id: 'header'

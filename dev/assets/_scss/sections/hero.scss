@@ -24,8 +24,9 @@
         .heroScroll-wrapper {
             // border: 2px solid red;
             // position: absolute;
-            // width: 100vh;
-            // height: 100vw;
+            width: 100vw;
+            height: 100vh;
+            // border: 2px solid red;
             // margin-top: 50vh;
         }
 
@@ -42,16 +43,18 @@
         }
 
         .hero-header {
-            // position: absolute;
-            // top: 0;
-            // bottom: 0;
-            // left: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
             margin: auto 0;
 
 
             h1 {
                 // transform: translateY(-50%);
                 transform-origin: left center;
+                align-self: center;
                 display: inline-flex;
                 margin: 0;
                 padding-left: 50px;
