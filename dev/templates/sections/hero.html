@@ -1,12 +1,15 @@
+{% set range = range(1, 5) %}
+{% set randomImg = random(range) %}
+
 <div class="bkg-container">
-    <div class="bkg"></div>
+    <div class="bkg" style="background-image: url(/media/coming-soon/{{randomImg}}.{% if randomImg == 5 %}png{% else %}jpg{% endif %});"></div>
 </div>
 <div class="main-container">
     <div class="hero">
         <div class="heroScroll-wrapper">
             <div class="hero-header" data-animateInView>
                 <h1 role="text" id="hero-header-animation" aria-label='Comming Soon To San Antonio' data-letterWrapping data-spaces data-wrapper="div aria-hidden='true'"
-                    data-wrappingClass="stroked-header letter">Coming Soon To San Antonio</h1>
+                    data-wrappingClass="stroked-header letter">COMING SOON TO DOWNTOWN SAN ANTONIO THIS FALL</h1>
             </div>
         </div>
     </div>

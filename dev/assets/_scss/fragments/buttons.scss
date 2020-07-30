@@ -40,11 +40,15 @@ input[type="submit"] {
     position: fixed;
     top: 30px;
     left: 40px;
-    z-index: 980;
+    z-index: 930;
     
     #logo {
         width: 150px;
         transition: fill 0s linear;
+
+        @media screen and (min-width: 800px) {
+            width: 180px;
+        }
 
         polygon{
             fill: white;
@@ -81,7 +85,7 @@ input[type="submit"] {
     right: 40px;
     background-color: transparent;
     cursor: pointer;
-    z-index: 980;
+    z-index: 930;
     padding: 0;
     margin: 0;
 
@@ -183,7 +187,13 @@ input[type="submit"] {
     bottom: 30px;
     left: 40px;
     display: flex;
-    z-index: 980;
+    z-index: 400;
+
+    
+    
+    @media screen and (min-width: 800px) {
+        z-index: 930;
+    }
 
     &.open {
         a {
@@ -224,9 +234,10 @@ div.button-container-threeD {
     right: 40px;
     width: 160px;
     height: 30px;
-    z-index: 980;
-
-    @media screen and (min-width: $mobile-BP) {
+    z-index: 400;
+    
+    @media screen and (min-width: 800px) {
+        z-index: 930;
         width: 180px;
         height: 35px;
     }
@@ -271,7 +282,7 @@ div.button-container-threeD {
         border-right: 1px solid black;
         cursor: pointer;
 
-        @media screen and (min-width: $mobile-BP) {
+        @media screen and (min-width: 800px) {
             font-size: 15px;
         }
 
@@ -291,7 +302,7 @@ div.button-container-threeD {
         .bottom {
             bottom: -14px;
             height: 15px;
-            width: 102%;
+            width: 101%;
             left: -8px;
             transform: skewX(-45deg);
             border-left: none;
@@ -358,13 +369,13 @@ div.button-container-threeD {
 div.button-container-threeD:not(#news-close){
     .play-button{
         &:active {
-            margin-left: -10px;
-            margin-top: 10px;
+            margin-left: -6px;
+            margin-top: 6px;
 
             .bottom {
-                bottom: -5px;
-                height: 5px;
-                left: -3px;
+                bottom: -7px;
+                height: 8px;
+                left: -4px;
 
                 &:before {
                     right: 2px;
@@ -373,8 +384,8 @@ div.button-container-threeD:not(#news-close){
             }
 
             .left {
-                left: -5px;
-                width: 5px;
+                left: -8px;
+                width: 8px;
                 bottom: -3px;
 
                 &:before {

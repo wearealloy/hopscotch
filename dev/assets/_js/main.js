@@ -18,7 +18,7 @@ letterWrapping();
 gsap.set('html', {overflow: 'hidden'});
 
 gsap.timeline({repeat: 3, repeatDelay: 0, onStart: function(){
-    gsap.to('.loading-bar', {scaleX: 1, duration: this.totalDuration(), ease: 'linear'});
+    gsap.to('.loading-bar .loading', {scaleX: 1, duration: this.totalDuration(), ease: 'linear'});
 }, onComplete: function(){
     gsap.set('html', {overflow: 'auto'});
     gsap.to('.loading-screen', {alpha: 0, duration: 0.4, delay: 0.2, onComplete: function(){
@@ -30,8 +30,6 @@ gsap.timeline({repeat: 3, repeatDelay: 0, onStart: function(){
 .to('.logo-two', {display: 'none', duration: 0.12})
 .to('.logo-three', {display: 'block', duration: 0.12})
 .to('.logo-three', {display: 'none', duration: 0.12})
-.to('.logo-four', {display: 'block', duration: 0.12})
-.to('.logo-four', {display: 'none', duration: 0.12})
 .to('.logo-one', {display: 'block', duration: 0.12});
 
 /*----------------------------------------------------------------*\
@@ -40,7 +38,7 @@ gsap.timeline({repeat: 3, repeatDelay: 0, onStart: function(){
 
 var signUpmodal = $('#signUp-modal');
 
-$('#news-open').click(function(){
+$('.news-open').click(function(){
     signUpmodal.toggleClass('open');
 
     if($('#menu-button').hasClass('open')){
@@ -59,11 +57,24 @@ $('#news-open').click(function(){
     }
 })
 
-$('#news-close').click(function(){
+$('#signUp-modal .form-container').click(function(e){
+    e.stopPropagation();
+})
+
+$('#news-close').click(function(e){
+    e.stopPropagation();
     gsap.set('html', {overflow: 'auto'});
-    signUpmodal.removeClass('open black-modal');
     gsap.to(signUpmodal, {alpha: 0, duration: 0.2, onComplete: function(){
         signUpmodal.hide();
+        signUpmodal.removeClass('open black-modal');
+    }})
+})
+
+$('#signUp-modal').click(function(){
+    gsap.set('html', {overflow: 'auto'});
+    gsap.to(signUpmodal, {alpha: 0, duration: 0.2, onComplete: function(){
+        signUpmodal.hide();
+        signUpmodal.removeClass('open black-modal');
     }})
 })
 
@@ -75,8 +86,8 @@ $('#news-close').click(function(){
 var titleWidth = $('#hero-header-animation').width();
 var windowWidht = $(window).width();
 
-// var headerEndWidth = (windowWidht / 1.5) - 100;
-var headerEndWidth = windowWidht - 100
+var headerEndWidth = (windowWidht / 1.3);
+// var headerEndWidth = windowWidht - 100
 var tweenHero = createTween();
 var trigger = createTrigger(tweenHero);
 var menuButtonClicked = false;
@@ -147,7 +158,7 @@ function letterAnim(){
 function updateVars() {
     titleWidth = $('#hero-header-animation').width();
     windowWidht = $(window).width();
-    headerEndWidth = (windowWidht / 1.5) - 100;
+    headerEndWidth = (windowWidht / 1.3);
 
     killGsap(tweenHero, trigger);
 
@@ -172,7 +183,6 @@ function createTrigger(tween){
         trigger: ".heroScroll-wrapper",
         start: `top`,
         end: `+=${titleWidth}`,
-        // end: `600px 700px`,
         scrub: true,
         pin: true,
         onLeave: ()=>{
