@@ -11,7 +11,7 @@ div.modal {
     // width: 100vw;
     // height: 100vh;
     z-index: 500;
-    background-color: rgba($color: #fff, $alpha: 0.9);
+    background-color: rgba($color: #fff, $alpha: 0.94);
 
     @media screen and (min-width: 800px) {
         width: 100vw;
@@ -44,6 +44,19 @@ div.modal {
             flex-direction: row;
             padding: 0px 80px;
             padding-top: 0;
+            margin-top: 140px;
+        }
+
+        .line{
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: black;
+            margin: 30px 0 50px;
+
+            @media screen and (min-width: 800px) {
+                display: none;
+            }
         }
 
         .column {
@@ -77,8 +90,9 @@ div.modal {
                     display: block;
                     margin-top: 30px;
                     max-width: 300px;
-                    
+
                     @media screen and (min-width: 800px) {
+                        max-width: 400px;
                         margin-top: 60px;
                     }
                 }
@@ -94,6 +108,10 @@ div.modal {
                 text-transform: uppercase;
                 margin-bottom: 20px;
                 margin-top: 50px;
+
+                &:nth-child(1){
+                    margin-top: 0;
+                }
             }
 
             p {
@@ -121,20 +139,24 @@ div.modal {
         margin-top: 50px;
         margin-bottom: 50px;
         text-align: left;
-        padding: 0px 40px 40px;
+        padding: 0px 40px;
 
         @media screen and (min-width: 800px) {
             padding: 0px;
             padding-bottom: 30px;
-            margin-top: 0;
+            margin-bottom: 0px;
+            margin-top: 20px;
             text-align: center;
         }
 
         p {
             font-size: 15px;
             margin-bottom: 8px;
-            line-height: 1;
             margin-top: 0;
+            
+            @media screen and (min-width: 800px) {
+                line-height: 1;
+            }
 
             a {
                 text-decoration: none;
@@ -144,12 +166,20 @@ div.modal {
                 }
             }
         }
+
+        br{
+            display: initial;
+            @media screen and (min-width: $mobile-BP) {
+                display: none;
+            }
+        }
     }
 
     .buttons-mobile{
         display: flex;
         justify-content: space-between;
-        padding: 0px 40px 40px;
+        padding: 0px 40px;
+        padding-bottom: 120px;
         align-items: center;
 
         @media screen and (min-width: 800px) { 

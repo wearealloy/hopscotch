@@ -236,7 +236,7 @@ function letterWrapping() {
             for (var i = 0; i < charactersFromElement.length; i++) {
                 if (spaces) {
                     if (charactersFromElement[i] == " ") {
-                        newCharacters.push(`<${wrapper}>&nbsp;&nbsp;</${wrapper}>`);
+                        newCharacters.push(`<${wrapper}>&nbsp;&nbsp;&nbsp;&nbsp;</${wrapper}>`);
                     } else {
                         newCharacters.push(`<${wrapper} class="${className} item-${counter}">${charactersFromElement[i]}</${wrapper}>`);
                         counter++;
