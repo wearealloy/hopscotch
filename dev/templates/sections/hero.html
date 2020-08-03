@@ -1,8 +1,8 @@
-{% set range = range(1, 5) %}
+{% set range = range(6, 7) %}
 {% set randomImg = random(range) %}
 
 <div class="bkg-container">
-    <div class="bkg" style="background-image: url(/media/coming-soon/{{randomImg}}.{% if randomImg == 5 %}png{% else %}jpg{% endif %});"></div>
+    <div class="bkg" style="background-image: url(/media/coming-soon/{{randomImg}}.jpg);"></div>
 </div>
 <div class="main-container">
     <div class="hero">

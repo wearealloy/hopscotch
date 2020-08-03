@@ -23,12 +23,13 @@ div.modal {
         overflow-y: scroll;
         height: 100vh;
         padding-top: 100px;
+        position: relative;
 
         @media screen and (min-width: 800px) {
             height: 100%;
             padding-top: 0px;
-            display: flex;
-            flex-direction: column;
+            // display: flex;
+            // flex-direction: column;
         }
     }
 
@@ -45,6 +46,20 @@ div.modal {
             padding: 0px 80px;
             padding-top: 0;
             margin-top: 140px;
+        }
+
+        @media screen and (min-height: 820px) and (min-width: 800px){
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 660px;
+            margin: auto;
+        }
+
+        @media screen and (min-width: 830px) and (min-height: 820px){
+            height: 630px;
         }
 
         .line{
@@ -85,6 +100,19 @@ div.modal {
                 }
             }
 
+            @media screen and (min-height: 820px) and (min-width: 800px){
+                padding-bottom: 0;
+            }
+
+            @media screen and (min-width: 950px) and (max-height: 820px) {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            @media screen and (min-width: 950px){
+                padding-top: 80px;
+            }
+
             &.two {
                 img{
                     display: block;
@@ -98,10 +126,6 @@ div.modal {
                 }
             }
 
-            @media screen and (min-width: 950px) {
-                padding-top: 80px;
-                padding-bottom: 80px;
-            }
 
             h2 {
                 font-size: 25px;
@@ -149,6 +173,14 @@ div.modal {
             text-align: center;
         }
 
+        @media screen and (min-height: 820px) and (min-width: 800px){
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
         p {
             font-size: 15px;
             margin-bottom: 8px;
@@ -156,6 +188,10 @@ div.modal {
             
             @media screen and (min-width: 800px) {
                 line-height: 1;
+            }
+
+            &:nth-last-child(1){
+                margin-bottom: 0;
             }
 
             a {
