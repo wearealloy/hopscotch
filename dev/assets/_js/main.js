@@ -5,113 +5,201 @@ window.$ = $;
 
 // import JS files here using ES6 import statement
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import waypoint from '../../../node_modules/waypoints/lib/noframework.waypoints';
+import inview from '../../../node_modules/waypoints/lib/shortcuts/inview';
+import * as vivus from 'vivus';
 
 gsap.registerPlugin(ScrollTrigger);
 
 letterWrapping();
+createWapointOnView();
+// pathLengthPrepare();
 
+if ($('main.template.home').length > 0) {
+    new vivus('pattern-home', { duration: 100 });
+    new vivus('pattern-home-mobile', { duration: 100 });
+}
+
+// var $svgHome = document.querySelectorAll("#pattern-home path");
+// var graphicAnimation = gsap.to($svgHome, 10, { strokeDashoffset: 0})
+// ScrollTrigger.create({
+//     animation: graphicAnimation,
+//     trigger: "section.opening-soon",
+//     start: `top center`,
+//     // end: `${$(window).height()} center`,
+//     scrub: true,
+//     // pin: true,
+//     // markers: true,
+//     id: 'graphic'
+// })
+
+/*----------------------------------------------------------------*\
+		TESTIMONIAL GSAP
+\*----------------------------------------------------------------*/
+
+if ($('main.template.home').length > 0) {
+
+    var testimonialTl = gsap.timeline();
+    // var testimonials = gsap.utils.toArray(".testimonial");
+
+    gsap.set('.testimonial', { y: -30, alpha: 0 });
+
+    testimonialTl.to('.testimonial', { y: 0, alpha: 1, duration: 0.2, stagger: 0.1 });
+
+    ScrollTrigger.create({
+        animation: testimonialTl,
+        trigger: "section.testimonials",
+        start: `top center`,
+        // markers: true,
+        id: 'testimonial'
+    })
+
+    $(window).scroll(letterAnim);
+    $(window).resize(updateVars);
+}
+
+/*----------------------------------------------------------------*\
+		EXHIBITIONS
+\*----------------------------------------------------------------*/
+
+if ($('main.template.about').length > 0) {
+
+    var exihibitionsTl = gsap.timeline();
+    // var testimonials = gsap.utils.toArray(".testimonial");
+
+    gsap.set('.exhibitions h2 img', { alpha: 0 });
+    gsap.set('.exhibit', { alpha: 0, y: -30 });
+
+    exihibitionsTl.to('.exhibitions h2 img', { alpha: 1, duration: 0.4 })
+    exihibitionsTl.to('.exhibit', { alpha: 1, y: 0, duration: 0.5, stagger: 0.1 });
+
+    ScrollTrigger.create({
+        animation: exihibitionsTl,
+        trigger: "section.exhibitions",
+        start: `top center`,
+        // markers: true,
+        id: 'exhibitions'
+    });
+
+
+    var windowWidth = $(window).width();
+    if (windowWidth < 640) {
+        var exihibits = gsap.utils.toArray('.exhibit .inner');
+
+        exihibits.forEach(element => {
+            gsap.to(element, {
+                rotateY: 180,
+                scrollTrigger: {
+                    trigger: element,
+                    start: `top center`,
+                    end: `bottom center`,
+                    toggleActions: 'play reverse play reverse',
+                    // markers: true,
+                    // id: 'exhibit'
+                },
+                ease: 'linear'
+            })
+        });
+    }
+}
 
 /*----------------------------------------------------------------*\
 		LOADING SREEN ANIMATION
 \*----------------------------------------------------------------*/
-gsap.set('html', {overflow: 'hidden'});
+// if ($('main.template.home').length > 0) {
+//     gsap.set('html', { overflow: 'hidden' });
 
-gsap.timeline({repeat: 3, repeatDelay: 0, onStart: function(){
-    gsap.to('.loading-bar .loading', {scaleX: 1, duration: this.totalDuration(), ease: 'linear'});
-}, onComplete: function(){
-    gsap.set('html', {overflow: 'auto'});
-    gsap.to('.loading-screen', {alpha: 0, duration: 0.4, delay: 0.2, onComplete: function(){
-        $('.loading-screen').hide();
-    }});
-}})
-.to('.logo-one', {display: 'none', duration: 0.12})
-.to('.logo-two', {display: 'block', duration: 0.12})
-.to('.logo-two', {display: 'none', duration: 0.12})
-.to('.logo-three', {display: 'block', duration: 0.12})
-.to('.logo-three', {display: 'none', duration: 0.12})
-.to('.logo-one', {display: 'block', duration: 0.12});
+//     gsap.timeline({
+//         repeat: 3, repeatDelay: 0, onStart: function () {
+//             gsap.to('.loading-bar .loading', { scaleX: 1, duration: this.totalDuration(), ease: 'linear' });
+//         }, onComplete: function () {
+//             gsap.set('html', { overflow: 'auto' });
+//             gsap.to('.loading-screen', {
+//                 alpha: 0, duration: 0.4, delay: 0.2, onComplete: function () {
+//                     $('.loading-screen').hide();
+//                 }
+//             });
+//         }
+//     })
+//         .to('.logo-one', { display: 'none', duration: 0.12 })
+//         .to('.logo-two', { display: 'block', duration: 0.12 })
+//         .to('.logo-two', { display: 'none', duration: 0.12 })
+//         .to('.logo-three', { display: 'block', duration: 0.12 })
+//         .to('.logo-three', { display: 'none', duration: 0.12 })
+//         .to('.logo-one', { display: 'block', duration: 0.12 });
+// }
+
 
 /*----------------------------------------------------------------*\
-		NEWSLETTER
+		FOOTER ANIMATION
 \*----------------------------------------------------------------*/
+var $body = $('body');
 
-var signUpmodal = $('#signUp-modal');
+// var footerTween = gsap.to('', {})
 
-$('.news-open').click(function(){
-    signUpmodal.toggleClass('open');
+ScrollTrigger.create({
+    trigger: 'footer.main-footer',
+    start: `top 54%`,
+    scrub: true,
+    onEnter: function () {
+        $body.addClass('white');
+    },
+    onLeaveBack: function () {
+        $body.removeClass('white');
+    },
+    // markers: true,
+    id: 'header'
+})
 
-    if($('#menu-button').hasClass('open')){
-        signUpmodal.toggleClass('black-modal');
+/*----------------------------------------------------------------*\
+		HERO ANIMATION
+\*----------------------------------------------------------------*/
+// gsap.set('html', {overflow: 'hidden'});
+
+if ($('.loop-img').length > 0) {
+    var loopImgs = gsap.utils.toArray(".loop-img");
+    var heroTl = gsap.timeline({ repeat: -1, repeatDelay: 0 })
+
+    for (let i = 0; i < loopImgs.length; i++) {
+        if (i == loopImgs.length - 1) {
+            heroTl.to(loopImgs[i], { alpha: 0, duration: 0, delay: 0.5 });
+            heroTl.to(loopImgs[0], { alpha: 1, duration: 0 });
+        } else {
+            heroTl.to(loopImgs[i], { alpha: 0, duration: 0, delay: 0.5 });
+            heroTl.to(loopImgs[i + 1], { alpha: 1, duration: 0 });
+        }
     }
+}
 
-    if(signUpmodal.hasClass('open')){
-        gsap.set('html', {overflow: 'hidden'});
-        gsap.set(signUpmodal, {display: 'flex'});
-        gsap.to(signUpmodal, {alpha: 1, duration: 0.3})
-    }else{
-        gsap.set('html', {overflow: 'auto'});
-        gsap.to(signUpmodal, {alpha: 0, duration: 0.3, onComplete: function(){
-            signUpmodal.hide();
-        }})
-    }
-})
+// ScrollTrigger.create({
+//     animation: heroTl,
+//     trigger: "section.hero",
+//     start: `top top`,
+//     // end: `+=${titleWidth}`,
+//     end: `${$(window).height()} center`,
+//     scrub: true,
+//     pin: true,
+//     // markers: true,
+//     id: 'hero-images'
+// })
 
-$('#signUp-modal .form-container').click(function(e){
-    e.stopPropagation();
-})
-
-$('#news-close').click(function(e){
-    e.stopPropagation();
-    gsap.set('html', {overflow: 'auto'});
-    gsap.to(signUpmodal, {alpha: 0, duration: 0.2, onComplete: function(){
-        signUpmodal.hide();
-        signUpmodal.removeClass('open black-modal');
-    }})
-})
-
-$('#signUp-modal').click(function(){
-    gsap.set('html', {overflow: 'auto'});
-    gsap.to(signUpmodal, {alpha: 0, duration: 0.2, onComplete: function(){
-        signUpmodal.hide();
-        signUpmodal.removeClass('open black-modal');
-    }})
-})
 
 
 /*----------------------------------------------------------------*\
         HEADER ANIMATION
 \*----------------------------------------------------------------*/
 
-var titleWidth = $('#hero-header-animation').width();
-var windowWidht = $(window).width();
+if ($('main.template.home').length > 0) {
+    var titleWidth = $('#hero-header-animation').width();
+    var windowWidht = $(window).width();
 
-var headerEndWidth = (windowWidht / 1.3);
-// var headerEndWidth = windowWidht - 100
-var tweenHero = createTween();
-var trigger = createTrigger(tweenHero);
-var menuButtonClicked = false;
+    var headerEndWidth = (windowWidht / 1.5);
 
-//menu anim
-$('#menu-button').click(function () {
-    $('.toggle-open').toggleClass('open');
-    openNav($(this), true);
-})
+    var tweenHero = createTween();
+    var trigger = createTrigger(tweenHero);
+    var menuButtonClicked = false;
 
-function openNav(nav, clickedFromButton){
-    if ($(nav).hasClass('open')) {
-        if(clickedFromButton){
-            gsap.set('html', {overflow: 'hidden'});
-        }
-        gsap.to('div.modal', {alpha: 1, visibility: 'visible', duration: 0.5})
-    } else {
-        gsap.to('div.modal', {alpha: 0, duration: 0.5, onComplete: ()=>{
-            if(clickedFromButton){
-                gsap.set('html', {overflow: 'auto'});
-            }
-            gsap.set('div.modal', {visibility: 'hidden'})
-        }})
-    }
 }
 
 
@@ -129,27 +217,62 @@ for (var i = 0; i < letters.length; i++) {
         // lettersInViewTimeLine.to(letters[i], letterInViewDelay, {color: '#FACCF3', ease: Power1.easeIn})
         // TweenMax.to(letters[i], 0.4, {color: '#FACCF3', ease: Power1.easeIn, delay: letterInViewDelay})
         // lettersInView = i;
-    }else if(elem.stroked){
+    } else if (elem.stroked) {
         letters[i].classList.add("animated");
     }
 }
 
-$(window).scroll(letterAnim);
-$(window).resize(updateVars);
+/*----------------------------------------------------------------*\
+	ACCORDION
+\*----------------------------------------------------------------*/
+var accordionBtn = document.getElementsByClassName('accordionItemHeading');
+var accordionItemContent = document.getElementsByClassName('accordionItemContent');
+var i;
+
+for (i = 0; i < accordionBtn.length; i++) {
+    accordionBtn[i].addEventListener('click', toggleItem, false);
+}
+
+function toggleItem() {
+
+    console.log('clicking on header')
+    var btnClass = this;
 
 
-function letterAnim(){
+    var itemClass = this.nextElementSibling.className;
+
+    for (i = 0; i < accordionItemContent.length; i++) {
+        accordionItemContent[i].classList.remove('open');
+        accordionItemContent[i].classList.add('close');
+        accordionItemContent[i].previousElementSibling.classList.remove('text')
+        gsap.to(accordionItemContent[i], { height: 0, duration: 0.5 });
+    }
+
+    if (itemClass == 'accordionItemContent close') {
+        this.nextElementSibling.className = 'accordionItemContent open';
+        btnClass.classList.add('text');
+        gsap.to(this.nextElementSibling, { height: 'auto', duration: 0.5 });
+    }
+}
+
+
+/*----------------------------------------------------------------*\
+	HELPER FUNCTIONS
+\*----------------------------------------------------------------*/
+
+
+function letterAnim() {
     for (var i = 0; i < letters.length; i++) {
         var elem = isInViewport(letters[i]);
-        if(!elem.filled) {
+        if (!elem.filled) {
             letters[i].classList.remove("animatedFilled");
-        }else if(!elem.filled && !elem.stroked){
+        } else if (!elem.filled && !elem.stroked) {
             letters[i].classList.remove("animated");
             letters[i].classList.remove("animatedFilled");
-        }else if (elem.stroked && elem.filled) {
+        } else if (elem.stroked && elem.filled) {
             letters[i].classList.add("animated");
             letters[i].classList.add("animatedFilled");
-        }else if(elem.stroked){
+        } else if (elem.stroked) {
             letters[i].classList.add("animated");
         }
     }
@@ -158,7 +281,7 @@ function letterAnim(){
 function updateVars() {
     titleWidth = $('#hero-header-animation').width();
     windowWidht = $(window).width();
-    headerEndWidth = (windowWidht / 1.3);
+    headerEndWidth = (windowWidht / 1.5);
 
     killGsap(tweenHero, trigger);
 
@@ -168,7 +291,7 @@ function updateVars() {
 }
 
 
-function createTween(){
+function createTween() {
     // var headerPosition = $(window).height()/2 - $('#hero-header-animation').height()/2;
     // gsap.set('#hero-header-animation', {y: headerPosition})
     return gsap.to("#hero-header-animation", {
@@ -177,33 +300,28 @@ function createTween(){
     });
 }
 
-function createTrigger(tween){
+function createTrigger(tween) {
+    var boundsTop = document.getElementById("hero-header-animation").getBoundingClientRect().top;
+    var scrollerPos = $(window).height() > boundsTop ? boundsTop : 'bottom';
     return ScrollTrigger.create({
         animation: tween,
         trigger: ".heroScroll-wrapper",
-        start: `top`,
-        end: `+=${titleWidth}`,
+        start: `top ${scrollerPos}`,
+        // end: `+=${titleWidth}`,
+        end: `bottom top`,
         scrub: true,
-        pin: true,
-        onLeave: ()=>{
-            $('.toggle-open').addClass('open');
-            openNav($('#menu-button'));
-        },
-        onEnterBack: ()=>{
-            $('.toggle-open').removeClass('open');
-            openNav($('#menu-button'), false);
-        },
+        // pin: true,
         // markers: true,
         id: 'header'
     })
 }
 
-function killGsap(tween, trigger){
+function killGsap(tween, trigger) {
     tween.kill();
     trigger.kill()
 }
 
-function isInViewport (elem) {
+function isInViewport(elem) {
     var viewPortObject = {}
     var bounding = elem.getBoundingClientRect();
     var q = bounding.right - elem.clientWidth;
@@ -265,4 +383,38 @@ function letterWrapping() {
         $(this).empty();
         $(this).html(newCharacters);
     })
+}
+
+/*----------------------------------------------------------------*\
+		CREATE WAYPOINTS
+\*----------------------------------------------------------------*/
+
+function createWapointOnView() {
+    var elements = document.querySelectorAll('[data-animateInView]');
+    var inViewWaypoints = [];
+
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        let elementIn = isInViewportHeight(element);
+        let inViewWaypoint = new Waypoint.Inview({
+            element: element,
+            enter: function () {
+                if (elementIn) {
+                    element.classList.add('animated', 'animated-delay');
+                } else {
+                    element.classList.add("animated")
+                }
+            }
+        })
+        inViewWaypoints.push(inViewWaypoint);
+    }
+
+    return inViewWaypoints;
+}
+
+function isInViewportHeight(elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top <= (window.innerHeight || document.documentElement.clientHeight)
+    );
 }

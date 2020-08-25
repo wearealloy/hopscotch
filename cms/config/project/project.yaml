@@ -1,0 +1,21 @@
+dateModified: 1598361609
+email:
+  fromEmail: jsosa@heyblackmagic.com
+  fromName: Hopscotch
+  transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+system:
+  edition: solo
+  live: true
+  name: Hopscotch
+  schemaVersion: 3.5.12
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

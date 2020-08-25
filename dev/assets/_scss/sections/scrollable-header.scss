@@ -1,0 +1,90 @@
+section.scrollable-header{
+    overflow: hidden;
+
+    >div{
+        position: relative;
+        padding-top: 0;
+        padding-bottom: 0;
+        @media screen and (min-width: $tablet-BP){
+            padding-top: 4em;
+            padding-bottom: 7em;
+        }
+    }
+
+    .heroScroll-wrapper{
+        // opacity: 0;
+        // transition: opacity 0.4s 0.3s linear;
+
+        // &.animated{
+        //     opacity: 1;
+        // }
+    }
+
+
+    .hero-header {
+        z-index: 1;
+    }
+
+
+    .hero-header {
+        // position: absolute;
+        // top: 0;
+        // bottom: 0;
+        // left: 0;
+        display: flex;
+        margin: auto 0;
+
+
+        h1 {
+            transform: translateX(5%);
+            transform-origin: left center;
+            align-self: center;
+            display: inline-flex;
+            margin: 0;
+            
+            @media screen and (min-width: $mobile-BP) {
+                transform: translateX(30%);
+            }
+
+            .letter {
+                font-weight: bold;
+                font-size: 9.5rem;
+                align-self: center;
+                display: inline-block;
+                -webkit-text-stroke: 2px $white;
+                text-align: left;
+                -webkit-text-fill-color: initial;
+                color: transparent;
+                // letter animation properties
+                transition: opacity 0.4s ease-in, color 0.4s ease-in;
+
+                // transform: scale(0.9) translateY(7%);
+                // opacity: 0;
+
+                &.animated {
+                    transition: all 0.4s ease-in;
+                    opacity: 1;
+                }
+
+                &.animatedFilled {
+                    transition: all 0.4s ease-in;
+                    color: white;
+                    text-shadow: 0px 0px 20px #292929;
+                }
+
+                &.animatedInView {
+                    opacity: 1;
+                }
+
+                @media screen and (min-width: 1200px) {
+                    font-size: 10vw;
+                }
+
+                @media screen and (max-width: 640px) {
+                    font-size: 6.5rem;
+                }
+            }
+
+        }
+    }
+}

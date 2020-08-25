@@ -49,6 +49,7 @@
     "gulp-chmod": "^2.0.0",
     "jquery": "^3.4.1",
     "slick-carousel": "^1.8.1",
+    "vivus": "^0.4.5",
     "waypoints": "^4.0.1",
     "what-input": "^5.1.2"
   }

@@ -46,8 +46,6 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	color: $black;
-	background-color: $black;
 }
 
 *,
@@ -87,13 +85,25 @@ section {
 		padding: 0 4em;
 	}
 
+	&:nth-child(1){
+		//borrar
+		padding-top: 100px;
+		@media screen and (min-width: $mobile-BP) {
+			padding-top: 0;
+		}
+		
+		>div{
+			padding-top: 1em;
+		}
+	}
+
 	&>div {
 		padding: 4em 0;
 		max-width: 1200px;
         margin: 0 auto;
 
 		@media(min-width: $tablet-BP) {
-			padding: 4em 2em;
+			padding: 5em 2em;
         }
     }
 }

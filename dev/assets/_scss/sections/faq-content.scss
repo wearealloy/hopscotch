@@ -1,0 +1,115 @@
+section.faq-content {
+    h1 {
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 0.5s 0.3s linear forwards;
+
+        @media screen and (min-width: $mobile-BP) {
+            margin-bottom: 80px;
+        }
+    }
+
+    .faq-container {
+        margin-top: 60px;
+        opacity: 0;
+        animation: fadeIn 0.5s 0.5s linear forwards;
+    }
+
+
+    .faq-section {
+        margin-bottom: 60px;
+
+        @media(min-width: $tablet-BP) {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-size: 22px;
+
+            @media(min-width: $tablet-BP) {
+                font-size: 27px;
+            }
+        }
+    }
+
+    .accordion {
+        .accordionItem {
+            width: 100%;
+            padding: 21px 0;
+            border-bottom: 2px solid $white;
+
+            &:nth-child(1) {
+                padding-top: 0;
+            }
+
+            .accordionItemHeading {
+                cursor: pointer;
+                margin: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                font-weight: lighter;
+                justify-content: space-between;
+
+                &.text{
+                    i:after {
+                        transform: rotate(0deg);
+                    }
+                }
+
+                i {
+                    display: block;
+                    position: relative;
+                    width: 15px;
+                    height: 15px;
+
+                    &:before, &:after{
+                        content: '';
+                        position: absolute;
+                        background-color: $white;
+                        height: 3px;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        margin: auto;
+                        transform-origin: center;
+                        transition: transform 0.3s ease-out;
+                    }
+
+                    &:after{
+                        transform: rotate(90deg);
+                    }
+                }
+
+            }
+
+            .accordionItemContent {
+                height: 0;
+                overflow: hidden;
+
+                p {
+                    margin-bottom: 0;
+                    margin-top: 1em;
+
+                    @media(min-width: $mobile-BP) {
+                        padding-right: 40px;
+                    }
+                }
+
+                // h6 {
+                //     font-size: 17px;
+                //     line-height: 1.35;
+
+                //     @media(min-width: $tablet-BP) {
+                //         font-size: 20px;
+                //     }
+                // }
+            }
+        }
+    }
+
+}

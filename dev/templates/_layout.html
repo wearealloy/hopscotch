@@ -25,11 +25,12 @@
 </head>
 <body>
 
-	{% include './sections/loading-screen.html' %}
-	{% include './sections/sign-up.html' %}
 	{% include './navigation/main-nav.html' %}
+
 	{% block content %}
-    {% endblock %}
+	{% endblock %}
+	
+	{% include './navigation/main-footer.html' %}
 
     
 	<script {%if siteUrl %} src="{{ siteUrl }}assets/js/main.js" {% else %} src="../web/assets/js/main.js"{% endif %}></script>

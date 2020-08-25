@@ -1,9 +1,12 @@
 {% extends "_layout.html" %}
 
 {% block content %}
- 
+    {#{% include './sections/loading-screen.html' %}#}
     <main class="template {{ entry.title | lower }}" id="main-content">
         {% include './sections/hero.html' %}
+        {% include './sections/scrollable-header.html' %}
+        {% include './sections/opening-soon.html' %}
+        {% include './sections/testimonials.html' %}
     </main>
 
 {% endblock %}

@@ -3,3 +3,124 @@
 \*----------------------------------------------------------------*/
 
 
+form.contact {
+    // margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 4%;
+	row-gap: 30px;
+
+    @media screen and (min-width: $mobile-BP) {
+        grid-template-columns: 48% 48%;
+    }
+
+    input:not(.submit) {
+        height: 40px;
+        border-radius: 0;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        color: black;
+        border-bottom: 2px solid black;
+        background-color: transparent;
+        font-family: $ff-sansSerif;
+        grid-column: 1;
+        font-size: 17px;
+
+        &::placeholder {
+            color: black;
+        }
+
+        @media screen and (min-width: $mobile-BP) {
+            &.name {
+                grid-column: 1 / 2;
+            }
+
+            &.phone {
+                grid-column: 2 / 3;
+            }
+
+            &.email,
+            &.message {
+                grid-column: 1 / 3;
+            }
+        }
+    }
+
+    label.sign-up {
+        position: relative;
+        font-size: 17px;
+        display: flex;
+		align-items: center;
+		margin-top: 20px;
+		// padding-left: 35px;
+		
+		@media screen and (min-width: $mobile-BP) {
+			grid-column: 1 / 3;	
+		}
+
+        input[type=checkbox] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+		}
+		
+
+		input:checked~.checkmark{
+			&:after {
+				display: block;
+			}
+        }
+
+        .checkmark {
+			position: relative;
+			margin-right: 12px;
+            height: 15px;
+            width: 15px;
+			background-color: #fff;
+			border: 2px solid $black;
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 3px;
+                top: 0px;
+                width: 5px;
+                height: 9px;
+                border: solid $black;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    div {
+		margin-top: 15px;
+
+		@media screen and (min-width: $mobile-BP) {
+			grid-column: 1 / 3;
+		}
+
+		input[type=submit] {
+			background-color: black;
+			padding: 12px 20px;
+			padding-bottom: 14px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin: 0;
+			font-weight: bold;
+			font-size: 15px;
+			transition: transform 0.3s linear;
+			color: $white;
+
+			&:hover{
+				transform: scale(1.05);
+			}
+		}
+	}
+}

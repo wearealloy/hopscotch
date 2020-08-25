@@ -11,6 +11,7 @@
 
 // fragments
 @import 'fragments/mixins';
+@import 'fragments/colors';
 @import 'fragments/typography.scss';
 @import 'fragments/forms.scss';
 @import 'fragments/buttons.scss';
@@ -20,7 +21,25 @@
 @import 'navigation/main-footer.scss';
 
 //section
-@import 'sections/hero.scss';
 @import 'sections/loading-screen.scss';
-@import 'sections/sign-up.scss';
+@import 'sections/hero.scss';
+@import 'sections/scrollable-header.scss';
+@import 'sections/opening-soon.scss';
+@import 'sections/testimonials.scss';
+
+
+@import 'sections/about-hero.scss';
+@import 'sections/exhibitions.scss';
+
+@import 'sections/faq-content.scss';
+
+@import 'sections/contact-hero.scss';
+@import 'sections/contact-instructions.scss';
+@import 'sections/get-in-touch.scss';
+
+
+
+// comming-soon
+// @import 'sections/hero.scss';
+// @import 'sections/sign-up.scss';
 

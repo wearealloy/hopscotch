@@ -1,0 +1,120 @@
+.bkg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding: 120px 20px 120px 20px;
+
+    .bkg {
+        height: 70%;
+        width: calc(100% - 40px);
+        background-position: center;
+        // background-size: 100% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media screen and (min-width: $mobile-BP){
+            height: calc(100vh - 220px);
+            width: calc(100vw - 80px);
+        }
+    }
+
+    @media screen and (min-width: $mobile-BP){
+        padding: 120px 40px 100px 40px;
+        height: auto;
+        width: auto;
+    }
+}
+
+.home {
+    position: relative;
+
+
+    .hero {
+
+        position: relative;
+
+        .heroScroll-wrapper {
+            // border: 2px solid red;
+            // position: absolute;
+            width: 100vw;
+            height: 100vh;
+            // border: 2px solid red;
+        }
+
+        .hero-header {
+            z-index: 1;
+        }
+
+        .hero-header {
+            // opacity: 0;
+            // transition: opacity 0.6s 2s ease;
+            // &.animated{
+            //     opacity: 1;
+            // }
+        }
+
+        .hero-header {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            margin: auto 0;
+
+
+            h1 {
+                // transform: translateY(-50%);
+                transform-origin: left center;
+                align-self: center;
+                display: inline-flex;
+                margin: 0;
+                padding-left: 50px;
+
+                // border: 2px solid orange;
+                .letter {
+                    font-size: 9.5rem;
+                    align-self: center;
+                    display: inline-block;
+                    -webkit-text-stroke: 2px $white;
+                    text-align: left;
+                    -webkit-text-fill-color: initial;
+                    color: transparent;
+                    // letter animation properties
+                    transition: opacity 0.4s ease-in, color 0.4s ease-in;
+
+                    // transform: scale(0.9) translateY(7%);
+                    // opacity: 0;
+
+                    &.animated {
+                        transition: all 0.4s ease-in;
+                        opacity: 1;
+                    }
+
+                    &.animatedFilled {
+                        transition: all 0.4s ease-in;
+                        color: white;
+                        text-shadow: 0px 0px 20px #292929;
+                    }
+
+                    &.animatedInView {
+                        opacity: 1;
+                    }
+
+                    @media screen and (min-width: 1200px) {
+                        font-size: 15vw;
+                    }
+
+                    @media screen and (max-width: 640px) {
+                        font-size: 6.5rem;
+                    }
+                }
+
+            }
+        }
+    }
+}

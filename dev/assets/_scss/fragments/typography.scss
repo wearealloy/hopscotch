@@ -1,24 +1,19 @@
-/*-----------------------------------*\
-	FONT SIZE PALETTE
-\*-----------------------------------*/
-.has-xs-font-size {
-	font-size: 14px;
-}
+// pargraph font sizes
+$p-ffSize: 19px;
+$p-ffSize-mobile: 17px;
 
-.has-small-font-size {
-	font-size: 16px;
-}
 
-.has-medium-font-size {
-	font-size: 18px;
-}
+.hero-header {
+    //font-size: 50px;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-family: $ff-sansSerif;
+    // letter-spacing: 1px;
+    line-height: 1;
 
-.has-large-font-size {
-	font-size: 24px;
-}
-
-.has-xl-font-size {
-	font-size: 32px;
+    @media(min-width: $tablet-BP) {
+        font-size: 90px;
+    }
 }
 
 /*-----------------------------------*\
@@ -30,165 +25,229 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 1.5rem;
-	margin-bottom: 1rem;
-	letter-spacing: 0;
+    // margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0;
 	font-family: $ff-sansSerif;
-	font-weight: 700;
-	line-height: 1.1;
+	font-weight: bold;
+    // font-family: $ff-sansSerif;
+    line-height: 1.2;
+
+    &:nth-child(1){
+        margin-top: 0;
+    }
 }
 
 h1,
 .h1 {
-	font-size: 40px;
+    font-size: 40px;
 
-	@media(min-width: $tablet-BP) {
-		font-size: 70px;
-	}
+    @media(min-width: $tablet-BP) {
+        font-size: 70px;
+    }
 }
 
 h2,
 .h2 {
-	font-size: 32px;
+    font-size: 30px;
 
-	@media(min-width: $tablet-BP) {
-		font-size: 55px;
-	}
+    @media(min-width: $tablet-BP) {
+        font-size: 50px;
+    }
 }
 
 h3,
 .h3 {
-	font-size: 26px;
+    font-size: 26px;
+    //font-size: 30px;
 
-	@media(min-width: $tablet-BP) {
-		font-size: 35px;
-	}
+    @media(min-width: $tablet-BP) {
+        font-size: 35px;
+    }
 }
 
 h4,
 .h4 {
-	font-size: 23px;
+    font-size: 23px;
 
-	@media(min-width: $tablet-BP) {
-		font-size: 26px;
-	}
+    @media(min-width: $tablet-BP) {
+        font-size: 30px;
+    }
 }
 
 h5,
 .h5 {
-	font-size: 16px;
+    font-size: 20px;
 
-	@media(min-width: $tablet-BP) {
-		font-size: 25px;
-	}
+    @media(min-width: $tablet-BP) {
+        font-size: 22px;
+    }
 }
 
 h6,
 .h6 {
-	font-size: 14px;
+    font-size: $p-ffSize-mobile;
 
-	@media(min-width: $tablet-BP) {
-		font-size: 16px;
-	}
+    @media(min-width: $tablet-BP) {
+        font-size: $p-ffSize;
+        line-height: 1.5;
+    }
+    
+    &.is-large{
+        font-size: 17px;
+        line-height: 1.35;
+
+        @media(min-width: $tablet-BP) {
+            font-size: 20px;
+        }
+    }
 }
 
 /*-----------------------------------*\
 	PARAGRAPH
 \*-----------------------------------*/
+
 p {
-	font-size: 17px;
-	line-height: 1.5;
-	font-family: $ff-sansSerif;
+    font-size: $p-ffSize-mobile;
+    line-height: 1.6;
+    font-family: $ff-sansSerif;
 
-	@media(min-width: $tablet-BP) {
-		font-size: 18px;
-	}
+    @media(min-width: $tablet-BP) {
+        font-size: $p-ffSize;
+    }
 
-	&.is-large {
-		font-size: 18px;
+    &:nth-child(1){
+        margin-top: 0;
+    }
+    &:nth-last-child(1){
+        margin-bottom: 0;
+    }
 
-		@media(min-width: $tablet-BP) {
-			font-size: 28px;
-		}
-	}
+    &.is-large {
+        //font-size: 17px;
+        font-size: 20px;
+        line-height: 1.35;
 
-	&.is-extra-large {
-		font-size: 20px;
-		line-height: 1.5;
+        @media(min-width: $tablet-BP) {
+            font-size: 22px;
+        }
+    }
 
-		@media(min-width: $tablet-BP) {
-			font-size: 50px;
-			line-height: 1.2;
-		}
-	}
+    &.is-extra-large {
+        font-size: 22px;
 
-	&.is-large-bold {
-		font-size: 17px;
-		font-weight: 700;
+        @media(min-width: $tablet-BP) {
+            font-size: 28px;
+        }
+    }
 
-		@media(min-width: $tablet-BP) {
-			font-size: 28px;
-		}
-	}
+    &.is-small{
+        font-size: 16px;
+        @media(min-width: $tablet-BP) {
+            font-size: 15px;
+        }
+    }
 
-	&.is-serif {
-		font-family: $ff-serif;
-	}
+    &.is-serif {
+        font-family: $ff-serif;
+    }
 
-	&.is-serif-large {
-		font-family: $ff-serif;
-		font-size: 15px;
-
-		@media(min-width: $tablet-BP) {
-			font-size: 20px;
-		}
-	}
-
-	&.is-serif-extra-large {
-		font-family: $ff-serif;
-		font-size: 21px;
-
-		@media(min-width: $tablet-BP) {
-			font-size: 50px;
-		}
-	}
-
-	&.is-bold {
-		font-weight: bold;
-	}
+    &.is-bold {
+        font-weight: bold;
+    }
 
 }
-a, p a {
-	color: $black;
-	text-decoration: underline;
 
-	// &:hover,
-	// &:focus {
-	// 	background-color: var(--Mint);
-	// }
+// links
+
+a,
+p a {
+    font-family: $ff-sansSerif;
+    text-decoration: none;
+    color: inherit;
+
+    // &:hover,
+    // &:focus {
+    // 	background-color: var(--Mint);
+    // }
 }
+
+a.address-map-link{
+    line-height: 24px;
+}
+
+a.is-small{
+    font-size: $p-ffSize-mobile;
+}
+
+
 
 /*-----------------------------------*\
 	LIST
 \*-----------------------------------*/
+
+ol,
+ul {
+    * {
+        font-size: $p-ffSize-mobile;
+        line-height: 1.7;
+        font-family: $ff-sansSerif;
+
+        @media(min-width: $tablet-BP) {
+            font-size: $p-ffSize;
+        }
+    }
+}
 
 
 /*-----------------------------------*\
 	HORIZONTAL RULE
 \*-----------------------------------*/
 hr {
-	margin: 3em auto;
-	height: 3px;
-	background-color: $black;
-	border: none;
+    margin: 3em auto;
+    height: 3px;
+    background-color: $black;
+    border: none;
 
-	&.is-style-wide {
-		margin: 6em auto;
-		max-width: 1024px;
-	}
+    &.is-style-wide {
+        margin: 6em auto;
+        max-width: 1024px;
+    }
 
-	&.is-style-dots::before {
-		font-weight: bold;
-		font-size: 35px;
-	}
+    &.is-style-dots::before {
+        font-weight: bold;
+        font-size: 35px;
+    }
+}
+
+
+/*-----------------------------------*\
+	BUTTONS
+\*-----------------------------------*/
+// button,
+// .button,
+// input[type="submit"] {
+//     font-size: $p-ffSize;
+//     font-family: $ff-sansSerif;
+//     letter-spacing: 1px;
+
+//     @media(min-width: $tablet-BP) {
+//         font-size: $p-ffSize;
+//     }
+
+// }
+
+/*-----------------------------------*\
+	FORM
+\*-----------------------------------*/
+
+form {
+    input, textarea {
+        font-size: $p-ffSize-mobile;
+        font-family: $ff-sansSerif;
+
+        @media(min-width: $tablet-BP) {
+            font-size: $p-ffSize
+        }
+    }
 }

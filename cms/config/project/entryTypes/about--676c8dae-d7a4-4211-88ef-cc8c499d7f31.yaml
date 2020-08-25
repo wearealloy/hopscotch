@@ -1,0 +1,7 @@
+handle: about
+hasTitleField: false
+name: About
+section: 34475136-40f1-4f7b-a942-4675600cf9b0
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleLabel: null

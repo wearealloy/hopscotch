@@ -1,0 +1,7 @@
+handle: faq
+hasTitleField: false
+name: FAQ
+section: 067382e8-5a41-48c4-93eb-e1dd8b7abf98
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleLabel: null

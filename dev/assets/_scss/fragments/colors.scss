@@ -1,0 +1,42 @@
+body{
+	background-color: $black;
+	color: $white;
+	transition: all 0.4s ease-in-out;
+	fill: $white;
+	&.white{
+		background-color: $white;
+		color: $black;
+		fill: $black;
+
+		footer div.button-container-threeD .play-button {
+			border-top: 1px solid $white;
+			border-right: 1px solid $white;
+			color: $white;
+			background-color: $black;
+
+			.bottom,
+			.left {
+				border: 1px solid $white;
+				background-color: $black;
+
+				&:before {
+					background-color: $white;
+				}
+			}
+		}
+
+		section.exhibitions .exhibit .inner .back{
+			background-color: $black;
+			color: $white;
+		}
+
+		section.faq-content .accordion .accordionItem{
+			border-color: $black;
+			.accordionItemHeading i{
+				&:before, &:after{
+					background-color: $black;
+				}
+			}
+		}
+	}
+}

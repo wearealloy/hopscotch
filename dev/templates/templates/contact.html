@@ -1,0 +1,11 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+ 
+    <main class="template {{ entry.title | lower }}" id="main-content">
+       {% include './sections/contact-hero.html' %}
+       {% include './sections/contact-instructions.html' %}
+       {% include './sections/get-in-touch.html' %}
+    </main>
+
+{% endblock %}

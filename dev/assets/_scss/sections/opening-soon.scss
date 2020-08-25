@@ -1,0 +1,81 @@
+div.graphic-container-mobile{
+    display: block;
+    overflow: hidden;
+    padding-top: 2em;
+    margin-left: -50px;
+    @media screen and (min-width: 830px) {
+        display: none;
+    }
+    svg{
+        width: 110%;
+    }
+}
+
+section.opening-soon{
+    overflow: hidden;
+
+    @media screen and (min-width: $mobile-BP) {
+        padding-right: 0;
+    }
+
+    >div{
+        display: flex;
+        position: relative;
+        
+
+        @media screen and (min-width: $mobile-BP) {
+            padding-right: 0;
+        }
+
+    }
+
+    .content{
+        width: 1000%;
+        
+        @media screen and (min-width: $mobile-BP) {
+            width: 70%;
+        }
+        @media screen and (min-width: 830px) {
+            width: 40%;
+        }
+
+        img, p{
+            opacity: 0;
+            transition: opacity 0.4s 0.3s linear;
+        }
+
+        img{
+            width: 200px;
+        }
+
+        p{
+            transition-delay: 0.4s;
+        }
+
+        &.animated{
+            img, p{
+                opacity: 1;
+            }
+        }
+    }
+
+    .graphic-container{
+        padding-left: 100px;
+        display: none;
+
+        @media screen and (min-width: 830px) {
+            width: 500px;
+            display: block;
+        } 
+
+        svg{
+            display: block;
+            margin-right: -100px;
+            margin-left: auto;
+
+            // path {
+            //     opacity: 0;
+            // }
+        }
+    }
+}
