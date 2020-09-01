@@ -1,0 +1,57 @@
+contentColumnType: text
+fieldGroup: 5a732bb2-b780-4b03-8e60-569879bbaa22
+handle: address
+instructions: ''
+name: Address
+searchable: false
+settings:
+  addRowLabel: 'Add a row'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Address
+            -
+              - handle
+              - address
+            -
+              - width
+              - ''
+            -
+              - type
+              - multiline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Google Map Link'
+            -
+              - handle
+              - googleMapLink
+            -
+              - width
+              - ''
+            -
+              - type
+              - url
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: '1'
+  minRows: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

@@ -18,7 +18,7 @@ createWapointOnView();
 
 if ($('main.template.home').length > 0) {
     new vivus('pattern-home', { duration: 100 });
-    new vivus('pattern-home-mobile', { duration: 100 });
+    // new vivus('pattern-home-mobile', { duration: 100 });
 }
 
 // var $svgHome = document.querySelectorAll("#pattern-home path");
@@ -33,6 +33,38 @@ if ($('main.template.home').length > 0) {
 //     // markers: true,
 //     id: 'graphic'
 // })
+
+/*----------------------------------------------------------------*\
+		NAVIGATION
+\*----------------------------------------------------------------*/
+
+var nav = $('.main-nav .links-container');
+$('.burger').click(function () {
+    $(this).toggleClass('activated');
+    $(nav).toggleClass('active');
+})
+
+if($(window).width() > 829){
+    $('.covid-banner').show();
+    gsap.set('.covid-banner', {marginTop: -$('.covid-banner').outerHeight()})
+    gsap.to('.covid-banner', {marginTop: 0, duration: 0.8, delay: 2});
+}else{
+    $('.covid-banner').show();
+    gsap.set('.covid-banner', {yPercent: 100})
+    gsap.to('.covid-banner', {yPercent: 0, duration: 0.8, delay: 2});
+}
+
+$('.covid-banner i').click(function(){
+    if($(window).width() > 829){
+        gsap.to('.covid-banner', {marginTop: -$('.covid-banner').outerHeight(), onComplete: function(){
+            $('.covid-banner').hide();
+        }});
+    }else{
+        gsap.to('.covid-banner', {yPercent: 100,  onComplete: function(){
+            $('.covid-banner').hide();
+        }});
+    }
+})
 
 /*----------------------------------------------------------------*\
 		TESTIMONIAL GSAP
@@ -105,30 +137,24 @@ if ($('main.template.about').length > 0) {
 }
 
 /*----------------------------------------------------------------*\
-		LOADING SREEN ANIMATION
+		CONTACT
 \*----------------------------------------------------------------*/
-// if ($('main.template.home').length > 0) {
-//     gsap.set('html', { overflow: 'hidden' });
+if ($('main.template.contact').length > 0) {
+    var contactElem = $('section.get-in-touch');
+    var contactElemScreen = $('section.get-in-touch .screen');
 
-//     gsap.timeline({
-//         repeat: 3, repeatDelay: 0, onStart: function () {
-//             gsap.to('.loading-bar .loading', { scaleX: 1, duration: this.totalDuration(), ease: 'linear' });
-//         }, onComplete: function () {
-//             gsap.set('html', { overflow: 'auto' });
-//             gsap.to('.loading-screen', {
-//                 alpha: 0, duration: 0.4, delay: 0.2, onComplete: function () {
-//                     $('.loading-screen').hide();
-//                 }
-//             });
-//         }
-//     })
-//         .to('.logo-one', { display: 'none', duration: 0.12 })
-//         .to('.logo-two', { display: 'block', duration: 0.12 })
-//         .to('.logo-two', { display: 'none', duration: 0.12 })
-//         .to('.logo-three', { display: 'block', duration: 0.12 })
-//         .to('.logo-three', { display: 'none', duration: 0.12 })
-//         .to('.logo-one', { display: 'block', duration: 0.12 });
-// }
+
+    gsap.to(contactElemScreen, { 
+        xPercent: 100, 
+        YPercent: 100, 
+        scrollTrigger: {
+            trigger: contactElem,
+            start: `top center`,
+            // markers: true,
+            // id: 'contact'
+        } 
+    })
+}
 
 
 /*----------------------------------------------------------------*\

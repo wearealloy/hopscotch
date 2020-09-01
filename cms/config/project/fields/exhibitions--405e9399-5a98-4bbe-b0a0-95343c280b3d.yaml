@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: fedbc63c-9c1f-4009-ac80-0ef3a8dd1320
+handle: exhibitions
+instructions: ''
+name: Exhibitions
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_exhibitions}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

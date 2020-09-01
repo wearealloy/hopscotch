@@ -1,0 +1,57 @@
+contentColumnType: text
+fieldGroup: 72d2a38c-21ab-4519-b91b-65f719ae5cf2
+handle: testimonials
+instructions: 'Min rows: 4'
+name: Testimonials
+searchable: false
+settings:
+  addRowLabel: 'Add a testimonial'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Testimonial
+            -
+              - handle
+              - testimonial
+            -
+              - width
+              - ''
+            -
+              - type
+              - multiline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Author
+            -
+              - handle
+              - author
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: ''
+  minRows: '4'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

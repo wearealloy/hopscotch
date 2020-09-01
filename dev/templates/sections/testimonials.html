@@ -2,65 +2,25 @@
     <div>
         <div class="header">
             <img src="/media/badges/Cube-QuotationMark.svg" alt="">
-            <h2 class="h3">What people are saying</h2>
+            <h2 class="h3">{{entry.testimonialsHeader}}</h2>
         </div>
         <div class="testimonial-carrousel">
             <div class="wrapper">
                 <div class="scroller">
+                    {% for testimonial in entry.testimonials %}
                     <blockquote class="testimonial">
-                        “I walked in weighed down with the week and walked out weightless, it is surprisingly joyful.”
-                        <footer>-AMY</footer>
+                        {{testimonial.testimonial}}
+                        <footer>-{{testimonial.author}}</footer>
                     </blockquote>
-                    <blockquote class="testimonial">
-                        “This uniquely curated immersive art experience was the highlight of our trip to Austin.”
-                        <footer>-Culture Trip</footer>
-                    </blockquote>
-                    <blockquote class="testimonial">
-                        “An amazing experience – an orgasmic stimulation of visual and audio sensory. Bravo.”
-                        <footer>-Thep</footer>
-                    </blockquote>
-                    <blockquote class="testimonial">
-                        “Hopscotch encourages people to put experiences over objects by showcasing unique, interactive
-                        experience throughout the art exhibit.”
-                        <footer>-The Daily Texan</footer>
-                    </blockquote>
-                    <blockquote class="testimonial">
-                        “Seriously one of the coolest places we’ve been to.”
-                        <footer>-Claire</footer>
-                    </blockquote>
-                    <blockquote class="testimonial">
-                        “These exhibits are done by local artists and unlike anything I’ve seen
-                        in Austin. Make plans to go as soon as possible.”
-                        <footer>-365 Things Austin</footer>
-                    </blockquote>
+                    {% endfor %}
                 </div>
                 <div class="scroller">
-                    <cite class="testimonial">
-                        “I walked in weighed down with the week and walked out weightless, it is surprisingly joyful.”
-                        <footer>-AMY</footer>
-                    </cite>
-                    <cite class="testimonial">
-                        “This uniquely curated immersive art experience was the highlight of our trip to Austin.”
-                        <footer>-Culture Trip</footer>
-                    </cite>
-                    <cite class="testimonial">
-                        “An amazing experience – an orgasmic stimulation of visual and audio sensory. Bravo.”
-                        <footer>-Thep</footer>
-                    </cite>
-                    <cite class="testimonial">
-                        “Hopscotch encourages people to put experiences over objects by showcasing unique, interactive
-                        experience throughout the art exhibit.”
-                        <footer>-The Daily Texan</footer>
-                    </cite>
-                    <cite class="testimonial">
-                        “Seriously one of the coolest places we’ve been to.”
-                        <footer>-Claire</footer>
-                    </cite>
-                    <cite class="testimonial">
-                        “These exhibits are done by local artists and unlike anything I’ve seen
-                        in Austin. Make plans to go as soon as possible.”
-                        <footer>-365 Things Austin</footer>
-                    </cite>
+                    {% for testimonial in entry.testimonials %}
+                    <blockquote class="testimonial">
+                        {{testimonial.testimonial}}
+                        <footer>-{{testimonial.author}}</footer>
+                    </blockquote>
+                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -1,0 +1,11 @@
+contentColumnType: string
+fieldGroup: dc84b6d1-777b-4368-ae5b-41cb8bcfbe59
+handle: hopscotchEmail
+instructions: ''
+name: 'Hopscotch Email'
+searchable: false
+settings:
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

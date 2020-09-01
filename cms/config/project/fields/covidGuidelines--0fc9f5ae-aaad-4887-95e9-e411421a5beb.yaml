@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: d728ed2f-7f94-45a3-ba4c-04c8f011c931
+handle: covidGuidelines
+instructions: ''
+name: 'Covid Guidelines'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_covidguidelines}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,55 @@
+section.policy-content{
+
+    h1{
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 0.5s 0.3s linear forwards;
+        @media screen and (min-width: $mobile-BP){
+            margin-bottom: 80px;
+        }
+    }
+
+    .content{
+        margin-top: 60px;
+        opacity: 0;
+        animation: fadeIn 0.5s 0.5s linear forwards;
+
+        ol{
+            list-style-type: upper-roman;
+            list-style-position: inside;
+            li{
+                font-size: 23px;
+                padding-left: 5px;
+                margin-bottom: 50px;
+
+                &::marker {
+                    display: inline-block;
+                }
+                @media(min-width: $tablet-BP) {
+                    font-size: 30px;
+                }
+                
+                h4{
+                    text-transform: uppercase;
+                    font-size: inherit;
+                    display: inline-block;
+                }
+
+                div.policy{
+                    // margin-left: -25px;
+
+                    p{
+                        font-size: $p-ffSize-mobile;
+                        line-height: 1.6;
+                        font-family: $ff-sansSerif;
+                    
+                        @media(min-width: $tablet-BP) {
+                            font-size: $p-ffSize;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

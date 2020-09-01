@@ -1,42 +1,127 @@
-nav.main-nav{
-    padding: 0 2em;
-    display: none;
-    @media(min-width: $mobile-BP){
-        display: block;
+nav.main-nav {
+    padding: 0 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+
+    transform: translateY(-100%);
+    animation: fadeIn-up 0.3s ease-out forwards;
+
+
+
+    @keyframes fadeIn-up {
+        to{
+            transform: translateY(0%);
+        }
     }
 
-	@media(min-width: $tablet-BP) {
-		padding: 0 4em;
-	}
+    @media(min-width: $mobile-BP) {
+        padding: 0 2em;
+    }
 
-	&>div {
-        padding: 2.5em 0;
+    @media(min-width: $tablet-BP) {
+        display: block;
+        position: relative;
+        padding: 0 4em;
+    }
+
+
+    &>div {
+        padding: 20px 0 2em;
         max-width: 1400px;
         margin: 0 auto;
+
     }
 
-    .inner{
+    .inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    .logo{
-        img{
-            width: 230px;
+    .logo {
+        position: relative;
+        z-index: 1;
+        img {
+            width: 200px;
+
+            @media(min-width: $tablet-BP) {
+                width: 230px;
+            }
         }
     }
 
-    .links-container{
-        a:not(.play-button){
+    .links-container {
+
+        display: inline-flex;
+        align-items: center;
+
+
+        @media(max-width: 829px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: $white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: $black;
+            transform: translateY(-100%);
+            transition-property: transform;
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.5s;
+        }
+
+        &.active{
+            transform: translateY(0%);
+        }
+
+        a:not(.play-button) {
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 1px;
             display: inline-block;
-            margin-right: 30px;
-            font-size: 15px;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-decoration: none;
+            position: relative;
+            // padding: 10px;
+            
+            @media(min-width: $tablet-BP) {
+                margin-right: 20px;
+                margin-bottom: 0;
+                font-size: 15px;
+            }
 
-            &:nth-last-child(1){
+            &:after{
+                position: absolute;
+                bottom: -5px;
+                left: 0px;
+                width: 0%;
+                height: 2px;
+                background: $white;
+                content: '';
+                transition: width 0.2s ease-in;
+            }
+
+            &.active{
+               &:after{
+                    width: 100%;
+               }
+            }
+
+            &:hover{
+                &:after{
+                    width: 100%;
+               }
+            }
+
+            &:nth-last-child(1) {
                 margin-right: 0;
             }
         }
@@ -44,20 +129,48 @@ nav.main-nav{
         div.button-container-threeD {
             position: relative;
             display: inline-block;
-            width: 125px;
-            height: 30px;
+            width: 175px;
+            height: 40px;
             top: auto;
             bottom: auto;
             right: auto;
             left: auto;
-            margin: 0 auto;
             margin-left: 20px;
-    
-            .play-button {
-                font-size: 14px;
-                letter-spacing: 1px;
+            margin-right: 0;
+            margin-top: 10px;
+
+            @media(min-width: $tablet-BP) {
+                margin-top: 0px;
+                width: 125px;
+                height: 30px;
             }
-    
+
+            .play-button {
+                font-size: 23px;
+                letter-spacing: 1px;
+
+                @media(max-width: $tablet-BP){
+                    background-color: $black;
+                    border-color: $white;
+                    color: $white;
+
+                    .left, .bottom{
+                        border-color: $white;
+                        background-color: $black;
+                        &:after, &:before{
+                            background-color: $white;
+                        }
+                    }
+                }
+
+
+                @media(min-width: $tablet-BP) {
+                    margin-left: 20px;
+                    font-size: 14px;
+                }
+
+            }
+
         }
     }
 }

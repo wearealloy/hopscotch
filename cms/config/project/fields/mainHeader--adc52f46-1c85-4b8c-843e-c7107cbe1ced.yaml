@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 1900278b-fbd9-4840-8e1f-c1eba29aa8aa
+handle: mainHeader
+instructions: ''
+name: 'Main Header'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

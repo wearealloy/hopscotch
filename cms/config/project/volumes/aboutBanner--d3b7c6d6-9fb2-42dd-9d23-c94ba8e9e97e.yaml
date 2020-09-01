@@ -1,0 +1,39 @@
+fieldLayouts:
+  cecee39f-2155-4b41-af3c-3d11fca16edf:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: aboutBanner
+hasUrls: true
+name: 'About Banner'
+settings:
+  path: '@mediaBasePath/about/banner'
+sortOrder: 2
+type: craft\volumes\Local
+url: '@mediaBaseUrl/about/banner'

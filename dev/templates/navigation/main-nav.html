@@ -1,15 +1,38 @@
+{% if craft.app.request.segments|first != 'covid-19' %}
+<div class="covid-banner">
+    <div class="wrapper">
+        <div class="scroller">
+            <p>What are we doing about the covid-19 pandemic? <a href="/covid-19">Click here to find out</a></p>
+            <i></i>
+        </div>
+    </div>
+</div>
+{% endif %}
 <nav class="main-nav">
     <div class="inner">
         <div class="logo"><a href="/"><img src="/media/logos/Hopscotch-Logo-white.svg" alt="Hopscotch"></a></div>
         <div class="links-container">
-            <a href="/about">About</a>
-            <a href="/faq">faq</a>
-            <a href="/contact">Contact</a>
+            <a class="{% if craft.app.request.segments|first == 'about' %}active{% endif %}" href="/about">About</a>
+            <a class="{% if craft.app.request.segments|first == 'faq' %}active{% endif %}" href="/faq">faq</a>
+            <a class="{% if craft.app.request.segments|first == 'contact' %}active{% endif %}" href="/contact">Contact</a>
             <div class="button-container-threeD news-open" id="news-open-two">
-                <a href="#" class="play-button">Get Tickets
+                <a href="#" target="_blank" class="play-button">Get Tickets
                     <div class="left"></div>
                     <div class="bottom"></div>
                 </a>
+            </div>
+        </div>
+        <div class="hamburger">
+            <div class="burger burger--second idle">
+
+                <div class="burger__inner">
+
+                    <span class="burger__inner__bun burger__inner__bun--top"></span>
+                    <span class="burger__inner__bun burger__inner__bun--filling"></span>
+                    <span class="burger__inner__bun burger__inner__bun--bottom"></span>
+
+                </div>
+
             </div>
         </div>
     </div>

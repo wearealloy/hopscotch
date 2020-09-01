@@ -1,0 +1,64 @@
+div.covid-banner{
+    padding: 10px 50px;
+    color: $black;
+    background: linear-gradient(to right, #8FDEE8, #CF6BF7);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 900;
+    display: none;
+    
+    @media screen and (min-width: $tablet-BP){
+        position: relative;
+        padding: 10px;
+    }
+
+    p{
+        margin: 0;
+        font-size: 17px;
+    }
+    a{
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    i{
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        right: 20px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: $black;
+            height: 2px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            transform-origin: center;
+            transition: transform 0.3s ease-out;
+        }
+
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:after{
+            transform: rotate(-45deg);
+        }
+    }
+}

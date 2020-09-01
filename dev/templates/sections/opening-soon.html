@@ -1,14 +1,13 @@
-<div class="graphic-container-mobile">
+{#<div class="graphic-container-mobile">
     {% include './fragments/home-pattern-mobile.html' %}
-</div>
+</div>#}
 <section class="opening-soon">
     <div>
         <div class="content" data-animateInView>
             <img src="/media/badges/OpeningSoon-Graphic.svg" alt="Opening Soon">
-            <p class="is-large" >Opening Friday, September 25th in downtown San Antonio, Hopscotch is a uniquely curated immersive and
-                interactive art gallery featuring distinctive installation rooms that showcase works from a variety of
-                artists. We aim to elicit a sense of joy and wonder in the spaces we create, where our guests may
-                explore beyond their day to day reality.</p>
+            <p class="is-large" >
+                {{entry.homeOpeningSoon}}
+            </p>
         </div>
         <div class="graphic-container">
             {% include './fragments/home-pattern.html' %}

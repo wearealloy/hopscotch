@@ -1,0 +1,39 @@
+fieldLayouts:
+  a07a50a1-60dc-4151-828d-f6b2a9ef7f9b:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: exhibits
+hasUrls: true
+name: Exhibits
+settings:
+  path: '@mediaBasePath/about/exhibits'
+sortOrder: 3
+type: craft\volumes\Local
+url: '@mediaBaseUrl/about/exhibits'

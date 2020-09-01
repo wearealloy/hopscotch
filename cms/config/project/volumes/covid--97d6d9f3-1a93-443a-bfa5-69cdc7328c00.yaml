@@ -1,0 +1,39 @@
+fieldLayouts:
+  b3abcaa5-0ce5-46a4-83c7-3100f6f048fb:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: covid
+hasUrls: true
+name: Covid
+settings:
+  path: '@mediaBasePath/covid'
+sortOrder: 5
+type: craft\volumes\Local
+url: '@mediaBaseUrl/covid'

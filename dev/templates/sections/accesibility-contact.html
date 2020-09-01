@@ -1,0 +1,82 @@
+{% if getenv('ENVIRONMENT') != 'dev'  %}
+
+    {% set media = craft.instagram.getMedia() %}
+
+    {% if media|length > 6 %}
+        {% set numberPosts = 5 %}
+    {% else %}
+        {% set numberPosts = media|length - 1 %}
+    {% endif %}
+
+    {% set instagramFeed = true %}
+{% else %}
+    {% set instagramFeed = false %}
+{% endif %}
+
+<section class="accesibility-contact">
+    <div>
+        <img src="/media/contact/accessibility-icon-2.svg" alt="Accesibility">
+        <div class="text">
+            <h4>Accessbility</h4>
+            <p>Hopscotch is for everyone and greatly values diversity. We do not discriminate on the basis of race,
+                religion, color, national origin, gender, sexual orientation, age, marital status, veteran status,
+                disability, or any other protected class.</p>
+        </div>
+    </div>
+</section>
+<div class="tagline-contact">
+    <div class="wrapper">
+        <div class="scroller">
+            <p>“So inventive and fun that I felt like a kid again.” – <span>STACY (HOUSTON, TX)</span></p>
+            <p>“So inventive and fun that I felt like a kid again.” – <span>STACY (HOUSTON, TX)</span></p>
+        </div>
+    </div>
+</div>
+<section class="sign-up">
+    <div>
+        <div class="sign-up-container">
+            <h4>Sign Up for emails</h4>
+            <p>Join our mailing list for updates and ticket releases</p>
+            <form
+                action="https://letshopscotch.us19.list-manage.com/subscribe/post?u=135731d3fd486378fd4b50a4d&amp;id=4825f4a840"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate sign-up"
+                target="_blank" novalidate>
+                <input aria-label="Name" required type="text" value="" name="FLNAME" class="required name"
+                    id="mce-FLNAME" placeholder="Name">
+                <input aria-label="Zip Code" type="text" value="" name="MMERGE2" class="zip" id="mce-MMERGE2"
+                    placeholder="Zip Code">
+                <input aria-label="Email" required type="email" value="" name="EMAIL" class="required email"
+                    id="mce-EMAIL" placeholder="Email Address">
+                <div>
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </div>
+                <!-- <div id="mce-responses" class="clear" style="display: none;"> 
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                        name="b_135731d3fd486378fd4b50a4d_4825f4a840" tabindex="-1" value=""></div>
+            </form>
+        </div>
+        <div class="follow-us">
+            <h4>Follow Us</h4>
+            <div class="grid">
+                {% if instagramFeed %}
+                    {% for i in 0..numberPosts %}
+                    {% set permalink = media[i].permalink %}
+                    {% set caption = media[i].caption is defined ? media[i].caption : 'Instgram Picture' %}
+                    <div class="social">
+                        <a href="{{permalink}}" target="_blank">
+                            {% if media[i].media_type == 'VIDEO'%}
+                            <img src="{{media[i].thumbnail_url}}" alt="{{caption}}">
+                            {% else %}
+                            <img src="{{media[i].media_url}}" alt="{{caption}}">
+                            {% endif %}
+                        </a>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

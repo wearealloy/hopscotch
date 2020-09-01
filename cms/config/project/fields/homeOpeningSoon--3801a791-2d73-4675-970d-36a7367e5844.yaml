@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 72d2a38c-21ab-4519-b91b-65f719ae5cf2
+handle: homeOpeningSoon
+instructions: ''
+name: 'Opening Soon'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: '1'
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

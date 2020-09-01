@@ -1,0 +1,112 @@
+
+$burgerSide: 30px;
+$bunThickness: 3px;
+$halfBurger: $burgerSide / 2;
+$halfBun: $bunThickness / 2;
+$barrelRoll: 360deg;
+$tablet: 768px;
+$phone: 360px;
+
+
+$secondBurgerColor: #fff;
+
+
+//////////
+//SECOND//
+//////////
+
+$second--timing-function: cubic-bezier(.76,-0.35,.34,1.5);
+$second--container-timing-function: cubic-bezier(.76,-0.35,.34,1.5);
+$second--container-transition-duration: 1.3s;
+$second--bun-transition-duration: 0.6s;
+$second--bun-transition-delay: 0.3s;
+
+.hamburger{
+    position: relative;
+    overflow: hidden;
+    // width: 95px;
+    display: inline-block;
+    z-index: 1;
+
+    @media screen and (min-width: $tablet-BP) {
+        display: none;
+    }
+}
+
+.burger{
+
+	position: relative;
+	cursor: pointer;
+	padding: 10px;
+	opacity: 1;
+	transform-origin: center center;
+	animation-fill-mode: forwards;
+
+	&__inner{
+
+		position: relative;
+		height: $burgerSide;
+		width: $burgerSide;
+
+		&__bun{
+
+			width: 100%;
+			height: $bunThickness;
+			transform-origin: center center;
+			display: block;
+			position: absolute;
+			animation-fill-mode: forwards;
+
+			&--top{ top: 0; }
+
+			&--filling{ 
+
+				top: 50%;
+				transform: translateY(-50%);
+
+			}
+
+			&--bottom{ bottom: 0; }
+
+		}
+
+	}
+
+	&:hover{ opacity: 0.85; }
+
+	&--second{
+
+		transition-duration: $second--container-transition-duration;
+		transition-timing-function: $second--container-timing-function;
+		transition-property: transform;
+
+		& .burger__inner__bun{
+            // background-color: $black;
+			background-color: $secondBurgerColor;
+			transition-timing-function: $second--timing-function;
+			transition-duration: $second--bun-transition-duration;
+			transition-delay: $second--bun-transition-delay;
+			transition-property: transform;
+
+		}
+
+		&.activated{
+            transition-duration: $second--container-transition-duration;
+            transform: rotateZ($barrelRoll);
+            
+            & .burger__inner__bun{
+                background-color: $black;
+            }
+            
+
+			& .burger__inner__bun--top{ transform: translate3d(0,  #{$halfBurger - $halfBun}, 0) rotate(45deg); }
+
+			& .burger__inner__bun--filling{ transform: translateY(-50%) rotateZ(45deg); }
+
+			& .burger__inner__bun--bottom{ transform: translate3d(0,  #{-$halfBurger + $halfBun}, 0) rotate(-45deg); }
+
+		}
+
+	}
+
+}

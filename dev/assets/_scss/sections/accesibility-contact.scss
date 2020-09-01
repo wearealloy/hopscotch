@@ -1,0 +1,200 @@
+section.accesibility-contact {
+    >div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+
+        @media screen and (min-width: $mobile-BP) {
+            text-align: left;
+        }
+
+        img {
+            margin: auto;
+            width: 130px;
+
+            @media screen and (min-width: $mobile-BP) {
+                width: 250px;
+            }
+        }
+
+        .text {
+            margin-top: 30px;
+
+            @media screen and (min-width: $mobile-BP) {
+                margin-top: 0;
+                flex: 1;
+                padding-left: 100px;
+            }
+
+            h4 {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+div.tagline-contact {
+    padding: 3em 0 4em;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @media(min-width: $mobile-BP) {
+        padding: 5em 0 6em;
+    }
+
+
+    .wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .scroller {
+        display: flex;
+        align-items: center;
+
+        animation: scrollHorizontal 40s linear infinite;
+
+        @media screen and (min-width: $mobile-BP) {
+            animation: scrollHorizontal 125s linear infinite;
+        }
+
+        p {
+            margin: 0;
+            margin-right: 50px;
+            font-size: 40px;
+
+            span {
+                font-size: 38px;
+                font-weight: bold;
+            }
+
+            @media screen and (min-width: $mobile-BP) {
+                font-size: 55px;
+            }
+        }
+    }
+}
+
+section.sign-up {
+    margin-bottom: 50px;
+
+    @media screen and (min-width: $mobile-BP) {
+        margin-bottom: 0px;
+    }
+
+    >div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sign-up-container {
+
+        @media screen and (min-width: $tablet-BP) {
+            width: 50%;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-right: 62px;
+            border-right: 2px solid $white;
+        }
+
+        text-align: center;
+
+        h4 {
+            text-transform: uppercase;
+        }
+
+        p {
+            margin-bottom: 40px;
+        }
+    }
+
+    .follow-us {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+        width: 100%;
+
+        @media screen and (min-width: $mobile-small-BP) {
+            // height: 300px;
+        }
+
+        @media screen and (min-width: $tablet-BP) {
+            // height: 450px;
+            width: 50%;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: 60px;
+            margin-top: 0;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            column-gap: 12px;
+            row-gap: 12px;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+
+            @media screen and (min-width: $mobile-small-BP) {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 180px 180px;
+            }
+
+            @media screen and (min-width: $tablet-BP) {
+                grid-template-columns: 1fr 1fr;
+
+                >div {
+                    &:nth-last-child(1), &:nth-last-child(2){
+                        display: none;
+                    }
+                }
+            }
+
+            @media screen and (min-width: $desktop-BP) {
+                grid-template-columns: 1fr 1fr 1fr;
+                // grid-template-rows: 1fr 1fr;
+                >div {
+                    &:nth-last-child(1), &:nth-last-child(2){
+                        display: block;
+                    }
+                }
+            }
+
+            >div {
+                width: 80%;
+                height: 185px;
+                margin: auto;
+                background-color: $white;
+
+                @media screen and (min-width: $mobile-small-BP) {
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                a:hover{
+                    img{
+                        transform: scale(1.05);
+                    }
+                }
+                
+                img{
+                    transition: transform 0.2s linear;
+                    object-fit: cover;
+                    object-position: center;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

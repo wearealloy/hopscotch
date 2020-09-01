@@ -1,0 +1,76 @@
+contentColumnType: text
+fieldGroup: 5a732bb2-b780-4b03-8e60-569879bbaa22
+handle: hours
+instructions: ''
+name: Hours
+searchable: false
+settings:
+  addRowLabel: 'Add an Hour'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Day
+            -
+              - handle
+              - day
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Hours
+            -
+              - handle
+              - hours
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Last Ticket Time'
+            -
+              - handle
+              - lastTicketTime
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+        -
+          - col3
+          - ''
+  maxRows: ''
+  minRows: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

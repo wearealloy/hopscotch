@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: bbaf7dae-e9b7-4249-8438-3e7127eacc3e
+handle: faqs
+instructions: ''
+name: FAQs
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_faqs}}'
+  maxBlocks: ''
+  minBlocks: '1'
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

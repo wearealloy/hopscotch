@@ -108,7 +108,7 @@ section.exhibitions {
                 color: $black;
 
                 @media screen and (min-width: $tablet-BP) and (max-width: 1050px) {
-                    padding: 10px 20px;
+                    padding: 15px 20px;
                 }
 
                 .status{
@@ -129,6 +129,7 @@ section.exhibitions {
                     text-transform: uppercase;
                     margin-bottom: 5px;
                     margin-top: 0;
+                    line-height: 1;
 
                     @media screen and (min-width: $tablet-BP) and (max-width: 1050px) {
                         font-size: 22px;
@@ -139,7 +140,8 @@ section.exhibitions {
                     h6{
                         font-style: 18px;
                         font-weight: lighter;
-                        margin-bottom: 0;
+                        margin-bottom: 3px;
+                        line-height: 1;
                     }
                     .location{
                         margin-top: 0;

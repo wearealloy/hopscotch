@@ -1,6 +1,20 @@
 section.get-in-touch{
     color: $black;
+    position: relative;
     background: linear-gradient(45deg, #98DEFF, #E96DFF);
+    overflow: hidden;
+
+    >div.screen{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        padding: 0;
+        max-width: unset;
+        background-color: $black;
+    }
     
     @media screen {
         margin-top: 5em;

@@ -1,0 +1,57 @@
+contentColumnType: text
+fieldGroup: 5a732bb2-b780-4b03-8e60-569879bbaa22
+handle: contactEmails
+instructions: ''
+name: 'Contact Emails'
+searchable: false
+settings:
+  addRowLabel: 'Add a Contact'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Contact
+            -
+              - handle
+              - contact
+            -
+              - width
+              - ''
+            -
+              - type
+              - multiline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Contact Email'
+            -
+              - handle
+              - contactEmail
+            -
+              - width
+              - ''
+            -
+              - type
+              - email
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col2
+          - ''
+  maxRows: '4'
+  minRows: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

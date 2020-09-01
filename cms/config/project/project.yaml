@@ -1,4 +1,4 @@
-dateModified: 1598361609
+dateModified: 1598980394
 email:
   fromEmail: jsosa@heyblackmagic.com
   fromName: Hopscotch
@@ -7,11 +7,37 @@ graphql:
   publicToken:
     enabled: false
     expiryDate: null
+plugins:
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      expandSingles: '1'
+      redirectToEntry: '1'
+  instagrammedia:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      accesToken: ''
+      apiToken: ''
+      appId: '2657811631200291'
+      appSecret: 685a6bbb5b8b0ce05c364a9ffa98d76e
+      authLink: ''
+      creationTime: 0
+      expirationTime: !!float -18446
+      longAccesToken: ''
+      redirectUri: 'https://heyblackmagic.com/'
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 system:
   edition: solo
   live: true
   name: Hopscotch
-  schemaVersion: 3.5.12
+  schemaVersion: 3.5.13
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false

@@ -7,7 +7,6 @@ fieldLayouts:
             autocapitalize: true
             autocomplete: false
             autocorrect: true
-            autofocus: false
             class: null
             disabled: false
             id: null
@@ -28,7 +27,133 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
-        name: Content
+          -
+            fieldUid: 6cb54dd1-a7cc-43cb-a597-ecd1ae21ccc4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5b4bd39d-0a73-47ca-8e2c-1f3e540e1bfc
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c022db66-4bd4-48d4-ad7a-f55ffa388856
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7a12b877-11a6-40ad-815f-bcb2d64cc6ba
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f19a4bcc-3f57-4196-802c-d3b22fc012bc
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c6a11cb7-6e80-47e9-a318-0a4dc2303c64
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b9800d6d-96bf-4108-a1a5-23a3ec0c8a72
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8431433b-c239-4eb3-a6d7-83e5afa49641
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: Covid
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: eb88b426-676d-4298-9392-398a335da778
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b2b0ec89-eac4-47b0-95cd-cad671cf05d0
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Contact Form'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: b9052a0e-92dc-49db-aca1-5a4738de74c2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: Accesibility
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 96f68517-1b14-4a85-8670-a763bd4a3da4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fa86d8ac-5703-4fbe-84ee-2d3eb30e9da2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Contact
         sortOrder: 1
 handle: contact
 hasTitleField: false

@@ -15,10 +15,12 @@
 @import 'fragments/typography.scss';
 @import 'fragments/forms.scss';
 @import 'fragments/buttons.scss';
+@import 'fragments/hamburger.scss';
 
 // navigation
 @import 'navigation/main-nav.scss';
 @import 'navigation/main-footer.scss';
+@import 'navigation/covid-banner.scss';
 
 //section
 @import 'sections/loading-screen.scss';
@@ -36,6 +38,12 @@
 @import 'sections/contact-hero.scss';
 @import 'sections/contact-instructions.scss';
 @import 'sections/get-in-touch.scss';
+@import 'sections/accesibility-contact.scss';
+@import 'sections/covid-main.scss';
+
+@import 'sections/policy-content.scss';
+
+@import 'sections/four-o-four-content.scss';
 
 
 

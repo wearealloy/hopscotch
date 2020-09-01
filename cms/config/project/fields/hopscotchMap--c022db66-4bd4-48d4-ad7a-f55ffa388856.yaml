@@ -1,0 +1,29 @@
+contentColumnType: string
+fieldGroup: 5a732bb2-b780-4b03-8e60-569879bbaa22
+handle: hopscotchMap
+instructions: ''
+name: 'Hopscotch Map'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:22d4c992-dba7-449e-b36d-ac36420f47e5'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:8d814e64-e1b1-46c3-a3db-506877a68155'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

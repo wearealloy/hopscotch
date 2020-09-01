@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: fedbc63c-9c1f-4009-ac80-0ef3a8dd1320
+handle: aboutDescription
+instructions: ''
+name: 'About Description'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: '1'
+  placeholder: ''
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

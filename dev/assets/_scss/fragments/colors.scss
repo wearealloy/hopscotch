@@ -38,5 +38,30 @@ body{
 				}
 			}
 		}
+
+		section.sign-up{
+			.sign-up-container{
+				border-color: $black;
+			}
+			
+			form.sign-up{
+				input:not(#mc-embedded-subscribe){
+					color: $black;
+					border-bottom: 2px solid $black;
+					&::placeholder{
+						color: $black;
+					}
+				}
+
+				div input[type=submit]{
+					background-color: $black;
+					color: $white;
+				}
+			}
+		}
+
+		nav .hamburger > div > div > span.burger__inner__bun{
+			background-color: $black;
+		}
 	}
 }

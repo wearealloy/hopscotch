@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: covid19
+name: 'Covid 19'
+propagationMethod: all
+siteSettings:
+  fb7efba8-b557-46fd-82c6-4e761b57c79b:
+    enabledByDefault: true
+    hasUrls: true
+    template: templates/covid
+    uriFormat: covid-19
+type: single

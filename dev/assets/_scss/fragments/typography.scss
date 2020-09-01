@@ -163,7 +163,7 @@ p {
 a,
 p a {
     font-family: $ff-sansSerif;
-    text-decoration: none;
+    // text-decoration: none;
     color: inherit;
 
     // &:hover,
@@ -242,7 +242,7 @@ hr {
 \*-----------------------------------*/
 
 form {
-    input, textarea {
+    input, textarea, label{
         font-size: $p-ffSize-mobile;
         font-family: $ff-sansSerif;
 

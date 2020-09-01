@@ -12,6 +12,10 @@ section.contact-hero{
     .content{
         display: flex;
         flex-wrap: wrap;
+        margin-top: 60px;
+        opacity: 0;
+        animation: fadeIn 0.5s 0.4s linear forwards;
+
 
         .text{
             width: 100%;
@@ -48,8 +52,14 @@ section.contact-hero{
         }
 
         .img-container{
-            flex: 1;
+            width: 100%;
             width: auto;
+            margin-top: 40px;
+
+            @media screen and (min-width: $tablet-BP) {
+                flex: 1;
+                margin-top: 0;
+            }
 
             img{
                 width: 100%;

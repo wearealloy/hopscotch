@@ -1,25 +1,29 @@
-div.graphic-container-mobile{
-    display: block;
-    overflow: hidden;
-    padding-top: 2em;
-    margin-left: -50px;
-    @media screen and (min-width: 830px) {
-        display: none;
-    }
-    svg{
-        width: 110%;
-    }
-}
+// div.graphic-container-mobile{
+//     display: block;
+//     overflow: hidden;
+//     padding-top: 2em;
+//     margin-left: -50px;
+
+//     display: none;
+//     @media screen and (min-width: 830px) {
+//         display: none;
+//     }
+//     svg{
+//         width: 110%;
+//     }
+// }
 
 section.opening-soon{
     overflow: hidden;
-
-    @media screen and (min-width: $mobile-BP) {
+    
+    @media screen and (min-width: 830px) {
         padding-right: 0;
     }
-
+    
     >div{
+        padding-top: 5em;
         display: flex;
+        flex-wrap: wrap;
         position: relative;
         
 
@@ -30,11 +34,11 @@ section.opening-soon{
     }
 
     .content{
-        width: 1000%;
+        width: 100%;
         
-        @media screen and (min-width: $mobile-BP) {
-            width: 70%;
-        }
+        // @media screen and (min-width: $mobile-BP) {
+        //     width: 70%;
+        // }
         @media screen and (min-width: 830px) {
             width: 40%;
         }
@@ -60,18 +64,26 @@ section.opening-soon{
     }
 
     .graphic-container{
-        padding-left: 100px;
-        display: none;
+        // display: none;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 60px;
 
         @media screen and (min-width: 830px) {
-            width: 500px;
+            flex: 1;
             display: block;
+            padding-left: 100px;
+            margin-top: 0;
         } 
 
         svg{
             display: block;
-            margin-right: -100px;
             margin-left: auto;
+
+            @media screen and (min-width: 830px) {
+                margin-right: -100px;
+            } 
 
             // path {
             //     opacity: 0;

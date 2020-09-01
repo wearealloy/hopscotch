@@ -1,7 +1,75 @@
+fieldLayouts:
+  23ac780a-5470-4baf-bf3f-94d29b85bddb:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 08c4e1f2-f050-4136-9fae-966ecf5d9bc4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3801a791-2d73-4675-970d-36a7367e5844
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 72358550-6448-4bdd-9bdb-0bbed08109c8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4af71e1d-2a59-47b9-9552-29c24b9877d9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Home
+        sortOrder: 1
 handle: home
 hasTitleField: false
 name: Home
 section: eadb3e6b-cdf7-457f-9780-97d389f823ee
 sortOrder: 1
 titleFormat: '{section.name|raw}'
-titleLabel: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
