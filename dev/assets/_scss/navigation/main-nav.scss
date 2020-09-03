@@ -45,11 +45,11 @@ nav.main-nav {
         position: relative;
         z-index: 1;
         img {
-            width: 200px;
+            width: 100px;
 
-            @media(min-width: $tablet-BP) {
-                width: 230px;
-            }
+            // @media(min-width: $tablet-BP) {
+            //     width: 230px;
+            // }
         }
     }
 

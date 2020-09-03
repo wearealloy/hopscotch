@@ -19,7 +19,6 @@ fieldLayouts:
             placeholder: null
             readonly: false
             requirable: false
-            required: false
             size: null
             step: null
             tip: null
@@ -28,10 +27,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e7b3b7f1-8c18-4496-999a-dfe188acd0a3
-            instructions: null
-            label: null
-            required: false
+            fieldUid: d6fc4c91-3544-41f1-8d98-cbeb84362244
+            instructions: ''
+            label: FAQs
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

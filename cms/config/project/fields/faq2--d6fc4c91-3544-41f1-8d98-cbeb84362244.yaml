@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: bbaf7dae-e9b7-4249-8438-3e7127eacc3e
+handle: faq2
+instructions: ''
+name: 'FAQ 2'
+searchable: false
+settings:
+  columns:
+    __assoc__:
+      -
+        - 9054658e-f5b7-45cd-8ec7-ddaad6a16dd0
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 616e1265-a1aa-44c0-a6f0-c7c346270533
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_faq2}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

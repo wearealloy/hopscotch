@@ -1,4 +1,4 @@
-dateModified: 1598980394
+dateModified: 1599141758
 email:
   fromEmail: jsosa@heyblackmagic.com
   fromName: Hopscotch
@@ -33,6 +33,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
 system:
   edition: solo
   live: true

@@ -54,25 +54,20 @@ div.tagline-contact {
         display: flex;
         align-items: center;
 
-        animation: scrollHorizontal 40s linear infinite;
-
-        @media screen and (min-width: $mobile-BP) {
-            animation: scrollHorizontal 125s linear infinite;
-        }
-
         p {
             margin: 0;
             margin-right: 50px;
             font-size: 40px;
+            animation: scrollHorizontal 100s linear infinite;
 
             span {
                 font-size: 38px;
                 font-weight: bold;
             }
 
-            @media screen and (min-width: $mobile-BP) {
-                font-size: 55px;
-            }
+            // @media screen and (min-width: $mobile-BP) {
+            //     font-size: 40px;
+            // }
         }
     }
 }
@@ -90,6 +85,7 @@ section.sign-up {
     }
 
     .sign-up-container {
+        margin: 0 auto;
 
         @media screen and (min-width: $tablet-BP) {
             width: 50%;
@@ -147,10 +143,11 @@ section.sign-up {
 
             @media screen and (min-width: $mobile-small-BP) {
                 grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: 180px 180px;
+                grid-template-rows: 1fr 1fr;
             }
-
+            
             @media screen and (min-width: $tablet-BP) {
+                grid-template-rows: 170px 170px;
                 grid-template-columns: 1fr 1fr;
 
                 >div {
@@ -171,12 +168,17 @@ section.sign-up {
             }
 
             >div {
-                width: 80%;
-                height: 185px;
+                width: 80vw;
+                height: 80vw;
                 margin: auto;
                 background-color: $white;
 
                 @media screen and (min-width: $mobile-small-BP) {
+                    width: 30vw;
+                    height: 30vw;
+                }
+
+                @media screen and (min-width: $tablet-BP) {
                     width: 100%;
                     height: 100%;
                 }

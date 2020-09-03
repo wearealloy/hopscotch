@@ -1,0 +1,77 @@
+field: 616e1265-a1aa-44c0-a6f0-c7c346270533
+fieldLayouts:
+  91ac2d17-5c73-4f54-a34b-bf21c3b31f56:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 15922bef-f693-495e-aa09-939f366df505
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: db579482-b972-4911-b90d-f9a8e61368ae
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  15922bef-f693-495e-aa09-939f366df505:
+    contentColumnType: text
+    fieldGroup: null
+    handle: faqQuestion
+    instructions: ''
+    name: 'FAQ question'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  db579482-b972-4911-b90d-f9a8e61368ae:
+    contentColumnType: text
+    fieldGroup: null
+    handle: faqAnswer
+    instructions: ''
+    name: 'FAQ answer'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: manual
+      defaultTransform: ''
+      manualConfig: "{\r\n  \"buttons\": [\"link\"]\r\n}"
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: faqs
+name: Faqs
+sortOrder: 1

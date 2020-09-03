@@ -1,22 +1,31 @@
+{% set map = entry.hopscotchMap.one() %}
 <section class="contact-hero">
     <div>
         <h1 class="hero-header">Contact</h1>
         <div class="content">
             <div class="text">
                 <h3 class="h4">Visit Us</h3>
-                <p class="is-large">711 Navarro, Suite 100 <br> San Antonio, TX 78205</p>
+                {% for item in entry.address %}
+                <p class="is-large">{{item.address|nl2br}}</p>
                 <div class="button-container-threeD news-open" id="news-open-two">
-                    <a href="https://www.google.com/maps/place/711+Navarro+St+%23100,+San+Antonio,+TX+78205/@29.4281272,-98.4928058,17z/data=!3m1!4b1!4m5!3m4!1s0x865c5ff7e300eb3d:0xd24083b65785019e!8m2!3d29.4281272!4d-98.4906118" target="_blank" class="play-button">Get Directions
+                    <a href="{{item.googleMapLink}}" target="_blank" class="play-button">Get Directions
                         <div class="left"></div>
                         <div class="bottom"></div>
                     </a>
                 </div>
-                <p class="location-p">Hopscotch is located in the Travis Park Plaza Building at 711 Navarro – Main
-                    entrance is located on the park side at the corner of Navarro and Travis.</p>
+                {% endfor %}
+                <p class="location-p">{{entry.addressDescription|nl2br}}</p>
             </div>
             <div class="img-container">
-                <img src="/media/contact/Hopscotch-Map-0831.png" alt="Hopscotch Map">
+                <div>
+                    <img src="{{map.url}}" alt="Hopscotch Map">
+                    <div class="zoom-in">zoom in</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<div class="modal-img">
+    <i aria-label="close modal"></i>
+    <img src="{{map.url}}" alt="Hopscotch Map">
+</div>

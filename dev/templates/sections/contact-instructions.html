@@ -3,62 +3,43 @@
         <div class="flex-container">
             <div class="col one">
                 <div class="instruction">
-                    <h4 class="inst-header">Parking</h4>
-                    <p>Three hour validated parking will be provided for all guests who park in the Travis Park Plaza
-                        Garage. Enter off of Travis Street between Navarro and St. Mary’s. Bring your parking ticket
-                        with you and show it to Hopscotch staff to receive your validation.</p>
+                    <h4 class="inst-header">Free Parking</h4>
+                    <p>{{entry.parking|nl2br}}</p>
                 </div>
                 <div class="instruction">
                     <h4 class="inst-header">Stay a While</h4>
-                    <p>Make it a full day of unique experiences, grab a drink in our lounge, enjoy bites from our food
-                        truck and browse local curiosities in our gift shop. Afterward, explore all that downtown San
-                        Antonio has to offer.</p>
+                    <p>{{entry.stayAWhile|nl2br}}</p>
                 </div>
                 <div class="instruction">
                     <h4 class="inst-header">More Info</h4>
-                    <p>Minors under 18 are not allowed without a parent or guardian, children must be accompanied by an
-                        adult at all times during daytime hours. Hopscotch is adult only after 7:00pm, all guests must
-                        be 18+ to enter in the evening.
-                        Please visit our FAQ page to further plan your visit. </p>
+                    <p>{{entry.moreInfo|nl2br}}</p>
                 </div>
             </div>
             <div class="col two">
                 <div class="instruction">
                     <h4 class="inst-header">Public Transportation</h4>
-                    <p>We are conveniently located directly across from the Travis Park bus stop. Plan your trip with
-                        VIA Metropolitan Transit.</p>
+                    <p>{{entry.publicTransportation|nl2br}}</p>
                 </div>
                 <div class="hours">
                     <div class="bottom"></div>
                     <div class="left"></div>
                     <div class="content">
                         <h4 class="h4">Hours</h4>
+                        {% for time in entry.hours %}
                         <div class="hour-slot">
-                            <h6 class="day">Friday</h6>
-                            <time>2:00 pm-11:00 pm</time>
-                            <p>(Last ticket 9:00pm)</p>
+                            <h6 class="day">{{time.day}}</h6>
+                            <time>{{time.hours}}</time>
+                            <p>{{time.lastTicketTime}}</p>
                         </div>
-                        <div class="hour-slot">
-                            <h6 class="day">Saturday</h6>
-                            <time>11:00 am-11:00 pm</time>
-                            <p>(Last ticket 9:00pm)</p>
-                        </div>
-                        <div class="hour-slot">
-                            <h6 class="day">Sunday</h6>
-                            <time>12:00 pm-9:00 pm</time>
-                            <p>(Last ticket 7:30pm)</p>
-                        </div>
-                        <p class="disclosure">All gallery tickets must be purchased in advance. You do not need a ticket
-                            for our public spaces which include our lounge, gift shop, patio and food truck. </p>
+                        {% endfor %}
+                        <p class="disclosure">{{entry.hoursDescription|nl2br}}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="covid-cta">
-            <h3 class="h4">How are we responding to covid-19</h3>
-            <p>Hopscotch is committed to providing a healthy and clean environment for all. The safety and well-being of
-                our guests, staff and the community is of the utmost importance. Click here to learn more about our
-                COVID-19 guidelines and procedures.</p>
+            <h3 class="h4">{{entry.covidResponseHeader}}</h3>
+            <p>{{entry.covidResponse|nl2br}}</p>
             <div class="button-container-threeD news-open" id="news-open-two">
                 <a href="#" target="_blank" class="play-button">Get Tickets
                     <div class="left"></div>

@@ -1,68 +1,20 @@
+{% set guidelines = entry.covidGuidelines.all() %}
 <section class="covid-main">
     <div>
         <h1 class="hero-header">Covid-19</h1>
         <div class="content">
             <div class="intro">
-                <p class="is-large">Hopscotch is committed to providing a healthy and clean environment for all. The
-                    safety and well-being of
-                    our guests, staff and the community is of the utmost importance.</p>
-                <p class="is-large"> As you prepare to visit please know that guidelines from the City of San Antonio,
-                    Bexar County, State of
-                    Texas and Centers for Disease Control and Prevention (CDC) will be strictly followed. We have taken
-                    enhanced health and safety measures to ensure that we are implementing comprehensive and
-                    industry-leading procedures. Continue to visit this page for the most up to date information.</p>
+                <p class="is-large">{{entry.covidIntroPargraph|nl2br}}</p>
             </div>
             <div class="guidelines">
+                {% for guideline in guidelines %}
+                {% set graphic = guideline.numberGrpahic.one() %}
                 <div class="guideline">
-                    <img src="/media/covid/1.svg" alt="One">
-                    <h3 class="h4">ALL STAFF AND GUESTS MUST WEAR PROPER FACE COVERINGS AND BE TEMPERATURE SCREENED</h3>
-                    <p>Guests are not allowed entry without proper face covering and must keep them on throughout the
-                        experience. Anyone refusing to wear a face covering will be asked to leave the show.
-                        Temperatures will be checked at the door and must be below 100.4 degrees to enter.</p>
+                    <img src="{{graphic.url}}" alt="{{loop.index}}">
+                    <h3 class="h4">{{guideline.guidelineHeader}}</h3>
+                    <p>{{guideline.guidelineContent}}</p>
                 </div>
-                <div class="guideline">
-                    <img src="/media/covid/2.svg" alt="Two">
-                    <h3 class="h4">SOCIAL DISTANCING WILL BE ENFORCED</h3>
-                    <p>Guests must adhere to proper social distancing guidelines while at Hopscotch. Signage, ground
-                        markings and staff will enforce proper social distancing. Plexiglass barriers are placed in
-                        close contact areas. Separate entrance and exits limit guest interaction. We also have a large
-                        outdoor patio space available to enjoy food and beverage on while practicing social distancing.
-                    </p>
-                </div>
-                <div class="guideline">
-                    <img src="/media/covid/3.svg" alt="Three">
-                    <h3 class="h4">LIMITED VENUE HOURS AND 25% CAPACITY STRICTLY ENFORCED</h3>
-                    <p>We offer dedicated pre-ticketed time slots for a continually safe guest flow. If you are visiting
-                        one of our public non-ticketed gallery areas you will be asked to wait if we are at capacity.
-                    </p>
-                </div>
-                <div class="guideline">
-                    <img src="/media/covid/4.svg" alt="Four">
-                    <h3 class="h4">LIMITED TOUCH POINTS</h3>
-                    <p>No cash; all transactions are debit and credit card only. Tap to pay is available. Guests may use
-                        their phones to sign the waiver. Self-cleaning film has been added to all high touch spots.</p>
-                </div>
-                <div class="guideline">
-                    <img src="/media/covid/5.svg" alt="Five">
-                    <h3 class="h4">ALL SURFACES AND TOUCHPOINTS WILL BE SANITIZED REGULARLY</h3>
-                    <p>Along with professional nightly deep cleans, our staff will be trained in COVID safety and will
-                        be frequently cleaning surfaces throughout their shifts. </p>
-                </div>
-                <div class="guideline">
-                    <img src="/media/covid/6.svg" alt="Six">
-                    <h3 class="h4">TEN TOUCHLESS HAND SANITIZING STATIONS THROUGHOUT THE VENUE</h3>
-                    <p>Please avoid touching your eyes, nose and mouth. Please regularly use our many hand sanitizer
-                        stations that are available throughout the experience and avoid touching your eyes, nose and
-                        mouth.</p>
-                </div>
-                <div class="guideline">
-                    <img src="/media/covid/7.svg" alt="Seven">
-                    <h3 class="h4">FREQUENTLY CIRCULATED AND PURIFIED AIR</h3>
-                    <p>Our air is continually ventilated throughout the space at all times. We have ultraviolet lights
-                        and specialized filters installed inside our HVAC system to provide purified air throughout the
-                        entire building. Automated decontaminated systems are also placed throughout the space
-                        dispensing safe and reliable antimicrobial vapor. </p>
-                </div>
+                {% endfor %}
             </div>
             <div class="outro">
                 <p class="is-large">If are not feeling well, have tested positive for COVID-19 or feel you have been exposed to someone with COVID-19 please email contact@letshopcotch.com and we will help you reschedule your visit.</p>

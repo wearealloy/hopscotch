@@ -11,14 +11,14 @@ section.scrollable-header{
         }
     }
 
-    .heroScroll-wrapper{
-        // opacity: 0;
-        // transition: opacity 0.4s 0.3s linear;
+    // .heroScroll-wrapper{
+    //     opacity: 0;
+    //     transition: opacity 0.4s 0.3s linear;
 
-        // &.animated{
-        //     opacity: 1;
-        // }
-    }
+    //     &.animated{
+    //         opacity: 1;
+    //     }
+    // }
 
 
     .hero-header {
@@ -82,6 +82,10 @@ section.scrollable-header{
 
                 @media screen and (max-width: 640px) {
                     font-size: 6.5rem;
+                }
+
+                @media screen and (max-width: 500px) {
+                    font-size: 3.5rem;
                 }
             }
 

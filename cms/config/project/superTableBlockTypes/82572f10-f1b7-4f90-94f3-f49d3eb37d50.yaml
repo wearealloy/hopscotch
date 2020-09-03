@@ -1,0 +1,61 @@
+field: d6fc4c91-3544-41f1-8d98-cbeb84362244
+fieldLayouts:
+  03de152d-0158-460d-82ad-1211eed15411:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 9054658e-f5b7-45cd-8ec7-ddaad6a16dd0
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 616e1265-a1aa-44c0-a6f0-c7c346270533
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  616e1265-a1aa-44c0-a6f0-c7c346270533:
+    contentColumnType: string
+    fieldGroup: null
+    handle: faqQuestions
+    instructions: ''
+    name: 'FAQ questions'
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_faqquestions}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  9054658e-f5b7-45cd-8ec7-ddaad6a16dd0:
+    contentColumnType: text
+    fieldGroup: null
+    handle: faqSection
+    instructions: ''
+    name: 'FAQ section'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

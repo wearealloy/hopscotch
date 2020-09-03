@@ -3,26 +3,17 @@
     <div>
         <div class="col one">
             <h3 class="h4">Get in touch</h2>
-            <p>General Public + Ticketing Inquiries <br>
-                <a href="mailto:contact@letshopscotch.com" class="email">contact@letshopscotch.com</a></p>
-            <p>Artist, Partnership, Event or Media Inquiries <br>
-                <a href="mailto:opportunity@letshopscotch.com" class="email">opportunity@letshopscotch.com</a>
-            </p>
-            <p>Career, Staff, Volunteer or Brand Ambassador Inquiries<br>
-                <a href="mailto:join@letshopscotch.com" class="email">join@letshopscotch.com</a>
-            </p>
+            {% for contact in entry.contactEmails %}
+            <p>{{contact.contact}}
+                <a href="mailto:{{contact.contactEmail}}" class="email">{{contact.contactEmail}}</a></p>
+            {% endfor %}
         </div>
         <div class="col two">
             <form class="contact" action="">
                 <input class="name" type="text" placeholder="Name" aria-label="Name">
                 <input class="phone" type="text" placeholder="Phone Number" aria-label="Phone Number">
-                <input class="email" type="email" placeholder="Email Address" aria-label="Email Address">
+                <input required class="email" type="email" placeholder="Email Address" aria-label="Email Address">
                 <input class="message" type="text" placeholder="What can we help you with?" aria-label="What can we help you with?">
-                <label class="sign-up" for="newsletter">
-                    <input type="checkbox" class="sign-up" name="sign-up" id="newsletter">
-                    <span class="checkmark"></span>
-                    Sign me up to receive emails
-                </label>
                 <div>
                     <input class="submit" type="submit" value="Submit">
                 </div>

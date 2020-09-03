@@ -97,7 +97,13 @@ if ($('main.template.home').length > 0) {
 
 if ($('main.template.about').length > 0) {
 
-    var exihibitionsTl = gsap.timeline();
+    var delayTl = 0;
+
+    if(isInViewportHeight(document.querySelector('.exhibitions h2 img'))){
+        delayTl = 1;
+    }
+
+    var exihibitionsTl = gsap.timeline({delay: delayTl});
     // var testimonials = gsap.utils.toArray(".testimonial");
 
     gsap.set('.exhibitions h2 img', { alpha: 0 });
@@ -108,8 +114,8 @@ if ($('main.template.about').length > 0) {
 
     ScrollTrigger.create({
         animation: exihibitionsTl,
-        trigger: "section.exhibitions",
-        start: `top center`,
+        trigger: "section.exhibitions h2 img",
+        start: `top bottom`,
         // markers: true,
         id: 'exhibitions'
     });
@@ -154,6 +160,13 @@ if ($('main.template.contact').length > 0) {
             // id: 'contact'
         } 
     })
+
+    $('div.zoom-in').click(function(){
+        $('div.modal-img').toggleClass('open');
+    })
+    $('div.modal-img i').click(function(){
+        $('div.modal-img').toggleClass('open');
+    })
 }
 
 
@@ -166,7 +179,7 @@ var $body = $('body');
 
 ScrollTrigger.create({
     trigger: 'footer.main-footer',
-    start: `top 54%`,
+    start: `-100px 54%`,
     scrub: true,
     onEnter: function () {
         $body.addClass('white');
