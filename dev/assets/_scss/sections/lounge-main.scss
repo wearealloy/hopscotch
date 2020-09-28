@@ -1,0 +1,144 @@
+section.lounge-main {
+    .hero {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 100px;
+        
+        h1{
+            opacity: 0;
+            animation: fadeIn 0.5s 0.3s linear forwards;
+        }
+    }
+
+    .lounge-sections {
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 100px;
+
+            @media screen and (min-width: $tablet-BP) {
+                margin-bottom: 160px;
+            }
+
+            &:nth-child(1){
+                .content{
+                    animation: fadeIn 0.5s 0.5s linear forwards;
+                }
+                .img-container{
+                    animation: fadeIn 0.5s 0.7s linear forwards;
+                }
+            }
+
+            &:nth-child(2) {
+                &.animated{
+                    .img-container{
+                        animation: fadeIn 0.5s 0.5s linear forwards;
+                    }
+                    .content{
+                        animation: fadeIn 0.5s 0.3s linear forwards;
+                    }
+                }
+                @media screen and (min-width: $tablet-BP) {
+                    &.animated{
+                        .img-container{
+                            animation: fadeIn 0.5s 0.3s linear forwards;
+                        }
+                        .content{
+                            animation: fadeIn 0.5s 0.5s linear forwards;
+                        }
+                    }
+
+                }
+                .content {
+                    @media screen and (min-width: $tablet-BP) {
+                        padding-left: 60px;
+                        order: 2;
+                        padding-right: 0;
+                    }
+                }
+
+                .img-container {
+                    @media screen and (min-width: $tablet-BP) {
+                        padding-right: 60px;
+                        padding-left: 0;
+                        order: 1;
+
+                        img{
+                            transform: rotate(-2deg);
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(3){
+                margin-bottom: 0;
+                &.animated{
+                    .img-container{
+                        animation: fadeIn 0.5s 0.5s linear forwards;
+                    }
+                    .content{
+                        animation: fadeIn 0.5s 0.3s linear forwards;
+                    }
+                }
+                @media screen and (min-width: $tablet-BP){
+                    .img-container img{
+                        transform: rotate(2deg);
+                    }
+                }
+            }
+
+            h3 {
+                text-transform: uppercase;
+            }
+
+            .content {
+                opacity: 0;
+                @media screen and (min-width: $tablet-BP) {
+                    width: 50%;
+                    padding-right: 60px;
+                }
+            }
+
+            .img-container {
+                margin-top: 50px;
+                max-width: 500px;
+                display: flex;
+                align-items: center;
+                opacity: 0;
+                @media screen and (min-width: $tablet-BP) {
+                    max-width: unset;
+                    margin-top: 0;
+                    width: 50%;
+                    padding-left: 60px;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            div.button-container-threeD {
+                position: relative;
+                display: block;
+                width: 160px;
+                height: 35px;
+                top: auto;
+                bottom: auto;
+                right: auto;
+                left: auto;
+                margin: 0 auto;
+                margin-left: 20px;
+
+                &.menu-button{
+                    width: 110px;
+                }
+        
+                .play-button {
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                }
+        
+            }
+        }
+    }
+}

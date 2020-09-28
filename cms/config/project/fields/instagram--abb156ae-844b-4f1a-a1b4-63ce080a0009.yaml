@@ -1,8 +1,8 @@
 contentColumnType: string(255)
 fieldGroup: dc84b6d1-777b-4368-ae5b-41cb8bcfbe59
-handle: instgram
+handle: instagram
 instructions: ''
-name: Instgram
+name: Instagram
 searchable: false
 settings:
   maxLength: '255'

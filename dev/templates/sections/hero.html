@@ -1,16 +1,10 @@
+{% set heroImgs = entry.homeAnimationImages.all() %}
 <section class="hero">
     <div>
         <div class="hero-img-container">
-            <img class="loop-img" src="/media/home/the-hop-4.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-5.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-6.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-7.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-8.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-9.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-10.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-11.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-12.png" alt="">
-            <img class="loop-img" src="/media/home/the-hop-13.png" alt="">
+            {% for img in heroImgs %}
+            <img class="loop-img" src="{{img.url}}" alt="">
+            {% endfor %}
         </div>
     </div>
 </section>

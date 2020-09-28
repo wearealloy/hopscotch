@@ -81,19 +81,50 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   44926f00-4033-4eb3-b8a4-5b41d075afdd:
-    contentColumnType: boolean
+    contentColumnType: string
     fieldGroup: null
     handle: exhibitStatus
     instructions: 'Default set to ''current'''
     name: Status
     searchable: false
     settings:
-      default: true
-      offLabel: Past
-      onLabel: Current
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Past
+            -
+              - value
+              - past
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Current
+            -
+              - value
+              - current
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Coming Soon'
+            -
+              - value
+              - comingSoon
+            -
+              - default
+              - ''
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Lightswitch
+    type: craft\fields\RadioButtons
   5b9cf9c9-1f1e-4890-bf0b-0e701545e620:
     contentColumnType: text
     fieldGroup: null

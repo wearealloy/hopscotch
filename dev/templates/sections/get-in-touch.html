@@ -9,13 +9,30 @@
             {% endfor %}
         </div>
         <div class="col two">
-            <form class="contact" action="">
-                <input class="name" type="text" placeholder="Name" aria-label="Name">
-                <input class="phone" type="text" placeholder="Phone Number" aria-label="Phone Number">
-                <input required class="email" type="email" placeholder="Email Address" aria-label="Email Address">
-                <input class="message" type="text" placeholder="What can we help you with?" aria-label="What can we help you with?">
+            <form data-animateInView class="contact" name="contactForm" method="post" action="" accept-charset="UTF-8" id="contact-form-js">
+                {{ csrfInput() }}
+
+                <input type="hidden" name="action" value="contact-form/send">
+                {{ redirectInput('/contact') }}
+
+                <input type="text" name="fromName"  class="name" id="name" placeholder="Name" aria-label="Name" value="{{ message.fromName ?? '' }}">
+
+                <input type="text" name="message[Phone]" id="phone" placeholder="Phone Number" class="phone" aria-label="Phone Number" value="{{ message.message.Phone ?? '' }}">
+
+                <input type="email" required class="email" name="fromEmail" id="email" placeholder="Email Address" aria-label="Email Address" value="{{ message.fromEmail ?? '' }}">
+
+                <input name="message[body]" id="message" class="message" type="text" placeholder="What can we help you with?" aria-label="What can we help you with?" value="{{ message.message.body ?? '' }}">
                 <div>
                     <input class="submit" type="submit" value="Submit">
+                </div>
+
+                <div class="spinner-container" id="spinner-js">
+                    <svg class="spinner" viewBox="0 0 50 50">
+                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                    </svg>
+                </div>
+                <div class="message-container">
+                    <p id="submit-msg"></p>
                 </div>
             </form>
         </div>

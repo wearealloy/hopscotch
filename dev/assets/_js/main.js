@@ -169,6 +169,106 @@ if ($('main.template.contact').length > 0) {
     })
 }
 
+//ajax form and validation
+
+$('#contact-form-js').submit(function (ev) {
+    // Prevent the form from actually submitting
+    ev.preventDefault();
+  
+    if (validateForm() == false) {
+      return
+    }
+  
+    $('#spinner-js').show();
+    $('#submit-container').hide();
+    
+  
+    // Send it to the server
+    $.post({
+      url: '/',
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function (response) {
+        $('.message-container').show();
+        if (response.success) {
+          $('#submit-msg').html('Thank you for your message. It has been sent.');
+          clearForm($('#contact-form-js'));
+          $('#spinner-js').hide();
+          $('#submit-container').show();
+          // $('#thanks').fadeIn();
+        } else {
+          // response.error will be an object containing any validation errors that occurred, indexed by field name
+          // e.g. response.error.fromName => ['From Name is required']
+          $('#submit-msg').html('One or more fields have an error. Please check and try again.');
+          $('#spinner-js').hide();
+          $('#submit-container').show();
+        }
+      },
+      error: function(err){
+        $('.message-container').show();
+        $('#submit-msg').html('Oops, Something went wrong.');
+        $('#spinner-js').hide();
+        $('#submit-container').show();
+      }
+    });
+  });
+  
+  function clearForm($form) {
+    $form.find('input:not(.submit)').val('');
+  }
+  
+  // Defining a function to validate form 
+  function validateForm() {
+    // console.log('validating');
+    // Retrieving the values of form elements 
+    var name = document.getElementById('name');
+    var email = document.getElementById('email');
+    // var msg = document.getElementById('message');
+  
+    // Defining error variables with a default value
+    var nameErr = true;
+    var emailErr = true;
+    // var msgErr = true;
+  
+    // Validate name
+    if (name.value == "") {
+      name.classList.add('error');
+    } else {
+      var regex = /^[a-zA-Z\s]+$/;
+      if (regex.test(name.value) === false) {
+        name.classList.add('error');
+      } else {
+        nameErr = false;
+        name.classList.remove('error');
+      }
+    }
+  
+    // Validate email address
+    if (email.value == "") {
+      email.classList.add('error');
+    } else {
+      // Regular expression for basic email validation
+      var regex = /^\S+@\S+\.\S+$/;
+      if (regex.test(email.value) === false) {
+        email.classList.add('error');
+      } else {
+        emailErr = false;
+        email.classList.remove('error');
+      }
+    }
+  
+    // Prevent the form from being submitted if there are any errors
+    if ((nameErr || emailErr) == true) {
+      return false;
+    } else {
+      name.classList.remove('error');
+      email.classList.remove('error');
+      // msg.parentNode.classList.remove('error');
+      return true;
+    }
+  };
+  
+
 
 /*----------------------------------------------------------------*\
 		FOOTER ANIMATION

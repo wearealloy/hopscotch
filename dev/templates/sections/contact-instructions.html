@@ -39,9 +39,9 @@
         </div>
         <div class="covid-cta">
             <h3 class="h4">{{entry.covidResponseHeader}}</h3>
-            <p>{{entry.covidResponse|nl2br}}</p>
+            {{entry.covidResponse}}
             <div class="button-container-threeD news-open" id="news-open-two">
-                <a href="#" target="_blank" class="play-button">Get Tickets
+                <a href="{{hopscotch.getTicketsLink}}" target="_blank" class="play-button">Get Tickets
                     <div class="left"></div>
                     <div class="bottom"></div>
                 </a>

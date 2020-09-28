@@ -19,7 +19,6 @@ fieldLayouts:
             placeholder: null
             readonly: false
             requirable: false
-            required: false
             size: null
             step: null
             tip: null
@@ -146,6 +145,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\Heading
           -
             fieldUid: 96f68517-1b14-4a85-8670-a763bd4a3da4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fa86d8ac-5703-4fbe-84ee-2d3eb30e9da2
             instructions: null
             label: null
             required: false

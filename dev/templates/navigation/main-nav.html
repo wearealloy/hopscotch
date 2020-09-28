@@ -2,7 +2,7 @@
 <div class="covid-banner">
     <div class="wrapper">
         <div class="scroller">
-            <p>What are we doing about the Covid-19 pandemic? <a href="/covid-19">Click here to find out.</a></p>
+            <p>What are we doing about the COVID-19 pandemic? <a href="/covid-19">Click here to find out.</a></p>
             <i></i>
         </div>
     </div>
@@ -13,10 +13,11 @@
         <div class="logo"><a href="/"><img src="/media/logos/Hopscotch-logo-nv.svg" alt="Hopscotch"></a></div>
         <div class="links-container">
             <a class="{% if craft.app.request.segments|first == 'about' %}active{% endif %}" href="/about">About</a>
+            <a class="{% if craft.app.request.segments|first == 'lounge' %}active{% endif %}" href="/lounge">Lounge</a>
             <a class="{% if craft.app.request.segments|first == 'faq' %}active{% endif %}" href="/faq">faq</a>
             <a class="{% if craft.app.request.segments|first == 'contact' %}active{% endif %}" href="/contact">Contact</a>
             <div class="button-container-threeD news-open" id="news-open-two">
-                <a href="#" target="_blank" class="play-button">Get Tickets
+                <a href="{{hopscotch.getTicketsLink}}" target="_blank" class="play-button">Get Tickets
                     <div class="left"></div>
                     <div class="bottom"></div>
                 </a>

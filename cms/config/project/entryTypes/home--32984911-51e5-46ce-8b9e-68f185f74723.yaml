@@ -19,12 +19,20 @@ fieldLayouts:
             placeholder: null
             readonly: false
             requirable: false
-            required: false
             size: null
             step: null
             tip: null
             title: null
             type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6b04e7e0-58b8-409f-a65b-ef22a7b0862b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
@@ -37,10 +45,19 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 3801a791-2d73-4675-970d-36a7367e5844
+            fieldUid: b10776d2-ffa2-44e2-b9e8-14b15fcf9385
             instructions: null
             label: null
             required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3801a791-2d73-4675-970d-36a7367e5844
+            instructions: ''
+            label: 'Intro Section'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

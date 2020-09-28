@@ -1,0 +1,30 @@
+contentColumnType: string
+fieldGroup: 72d2a38c-21ab-4519-b91b-65f719ae5cf2
+handle: introSectionGraphic
+instructions: ''
+name: 'Intro Section Graphic'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:22d4c992-dba7-449e-b36d-ac36420f47e5'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:f8fbe300-4e2f-4644-bdde-abc473ac33cf'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

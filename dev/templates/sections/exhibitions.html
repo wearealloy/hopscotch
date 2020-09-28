@@ -9,7 +9,7 @@
                 <div class="inner">
                     <div class="back">
                         <div class="text">
-                            <p class="status is-small">{% if exhibit.exhibitStatus %}Current{% else %}Past{% endif %}</p>
+                            <p class="status is-small">{% if exhibit.exhibitStatus.value == 'current' %}Current{% elseif exhibit.exhibitStatus.value == 'past' %}Past{% elseif exhibit.exhibitStatus.value == 'comingSoon' %}Coming Soon{% endif %}</p>
                             <h4 class="title">{{exhibit.exhibitName}}</h4>
                             <div class="author">
                                 <h6>

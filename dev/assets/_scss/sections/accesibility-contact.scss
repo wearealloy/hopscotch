@@ -34,44 +34,6 @@ section.accesibility-contact {
     }
 }
 
-div.tagline-contact {
-    padding: 3em 0 4em;
-    margin: 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-
-    @media(min-width: $mobile-BP) {
-        padding: 5em 0 6em;
-    }
-
-
-    .wrapper {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    .scroller {
-        display: flex;
-        align-items: center;
-
-        p {
-            margin: 0;
-            margin-right: 50px;
-            font-size: 40px;
-            animation: scrollHorizontal 100s linear infinite;
-
-            span {
-                font-size: 38px;
-                font-weight: bold;
-            }
-
-            // @media screen and (min-width: $mobile-BP) {
-            //     font-size: 40px;
-            // }
-        }
-    }
-}
-
 section.sign-up {
     margin-bottom: 50px;
 

@@ -1,0 +1,31 @@
+contentColumnType: string
+fieldGroup: 72d2a38c-21ab-4519-b91b-65f719ae5cf2
+handle: homeAnimationImages
+instructions: ''
+name: 'Home Animation Images'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:22d4c992-dba7-449e-b36d-ac36420f47e5'
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:22d4c992-dba7-449e-b36d-ac36420f47e5'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:22d4c992-dba7-449e-b36d-ac36420f47e5'
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

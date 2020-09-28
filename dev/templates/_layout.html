@@ -32,8 +32,8 @@
 	{% endblock %}
 	
 	{% include './navigation/main-footer.html' %}
-
-    
+	<!-- FareHarbor Lightframe API - do not remove - see: https://fareharbor.com/help/api/lightframe-api/ -->
+	<script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 	<script {%if siteUrl %} src="{{ siteUrl }}assets/js/main.js" {% else %} src="../web/assets/js/main.js"{% endif %}></script>
 </body>
 </html>

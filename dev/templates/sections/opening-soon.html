@@ -1,10 +1,8 @@
-{#<div class="graphic-container-mobile">
-    {% include './fragments/home-pattern-mobile.html' %}
-</div>#}
+{% set graphicHomeOpening = entry.introSectionGraphic.one() %}
 <section class="opening-soon">
     <div>
         <div class="content" data-animateInView>
-            <img src="/media/badges/OpeningSoon-Graphic.svg" alt="Opening Soon">
+            <img src="{{graphicHomeOpening.url}}" alt="{{graphicHomeOpening.title}}">
             <p class="is-large" >
                 {{entry.homeOpeningSoon}}
             </p>

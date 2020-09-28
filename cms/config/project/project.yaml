@@ -1,4 +1,4 @@
-dateModified: 1599141758
+dateModified: 1601298757
 email:
   fromEmail: jsosa@heyblackmagic.com
   fromName: Hopscotch
@@ -8,6 +8,10 @@ graphql:
     enabled: false
     expiryDate: null
 plugins:
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   expanded-singles:
     edition: standard
     enabled: true
