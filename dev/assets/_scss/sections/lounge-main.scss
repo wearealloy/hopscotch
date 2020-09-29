@@ -1,12 +1,23 @@
 section.lounge-main {
     .hero {
         text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 100px;
         
         h1{
+            text-transform: uppercase;
+            margin-bottom: 0;
             opacity: 0;
             animation: fadeIn 0.5s 0.3s linear forwards;
+        }
+
+        p{
+            max-width: 900px;
+            margin: 60px auto;
+            opacity: 0;
+            animation: fadeIn 0.5s 0.5s linear forwards;
+
+            @media screen and (min-width: $tablet-BP){
+                margin: 80px auto 110px; 
+            }
         }
     }
 
@@ -22,26 +33,29 @@ section.lounge-main {
 
             &:nth-child(1){
                 .content{
-                    animation: fadeIn 0.5s 0.5s linear forwards;
+                    animation: fadeIn 0.5s 0.6s linear forwards;
                 }
                 .img-container{
-                    animation: fadeIn 0.5s 0.7s linear forwards;
+                    
+                    @media screen and (min-width: $tablet-BP){
+                        img{
+                            animation: fadeInLeftRotate 0.3s 0.7s ease-in-out forwards;
+                            transform: translate(20%) rotate(15deg);
+                        }
+                    }
                 }
             }
 
             &:nth-child(2) {
                 &.animated{
-                    .img-container{
-                        animation: fadeIn 0.5s 0.5s linear forwards;
-                    }
                     .content{
                         animation: fadeIn 0.5s 0.3s linear forwards;
                     }
                 }
                 @media screen and (min-width: $tablet-BP) {
                     &.animated{
-                        .img-container{
-                            animation: fadeIn 0.5s 0.3s linear forwards;
+                        .img-container img{
+                            animation: fadeInRightRotate 0.3s 0.7s ease-in-out forwards;
                         }
                         .content{
                             animation: fadeIn 0.5s 0.5s linear forwards;
@@ -64,7 +78,7 @@ section.lounge-main {
                         order: 1;
 
                         img{
-                            transform: rotate(-2deg);
+                            transform: translate(-25%) rotate(-15deg);
                         }
                     }
                 }
@@ -73,8 +87,8 @@ section.lounge-main {
             &:nth-child(3){
                 margin-bottom: 0;
                 &.animated{
-                    .img-container{
-                        animation: fadeIn 0.5s 0.5s linear forwards;
+                    .img-container img{
+                        animation: fadeInLeftRotate 0.3s 0.7s ease-in-out forwards;
                     }
                     .content{
                         animation: fadeIn 0.5s 0.3s linear forwards;
@@ -82,7 +96,7 @@ section.lounge-main {
                 }
                 @media screen and (min-width: $tablet-BP){
                     .img-container img{
-                        transform: rotate(2deg);
+                        transform: translate(20%) rotate(15deg);
                     }
                 }
             }
@@ -104,7 +118,6 @@ section.lounge-main {
                 max-width: 500px;
                 display: flex;
                 align-items: center;
-                opacity: 0;
                 @media screen and (min-width: $tablet-BP) {
                     max-width: unset;
                     margin-top: 0;
@@ -114,6 +127,9 @@ section.lounge-main {
 
                 img {
                     width: 100%;
+                    @media screen and (min-width: $tablet-BP){
+                        opacity: 0;
+                    }
                 }
             }
 
@@ -139,6 +155,19 @@ section.lounge-main {
                 }
         
             }
+        }
+    }
+
+    @keyframes fadeInLeftRotate {
+        to{
+            opacity: 1;
+            transform: translate(0%) rotate(0.5deg);
+        }
+    }
+    @keyframes fadeInRightRotate {
+        to{
+            opacity: 1;
+            transform: translate(0%) rotate(-2deg);
         }
     }
 }

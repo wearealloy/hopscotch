@@ -1,0 +1,38 @@
+fieldLayouts:
+  835c8558-d679-41d0-8d81-f433fe009b49:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: menu
+hasUrls: true
+name: Menu
+settings:
+  path: '@mediaBasePath/menu'
+sortOrder: 7
+type: craft\volumes\Local
+url: '@mediaBaseUrl/menu'

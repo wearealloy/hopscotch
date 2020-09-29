@@ -1,0 +1,30 @@
+contentColumnType: string
+fieldGroup: d8d7d78d-c07e-4734-93a7-ec77e3f5f8f2
+handle: shopImage
+instructions: 'Image size: 1044 x 696'
+name: 'Shop Image'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:22d4c992-dba7-449e-b36d-ac36420f47e5'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:9b850ba4-b547-467e-b94b-ff602da9a22e'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

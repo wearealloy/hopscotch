@@ -1,0 +1,32 @@
+contentColumnType: string
+fieldGroup: d8d7d78d-c07e-4734-93a7-ec77e3f5f8f2
+handle: menu
+instructions: ''
+name: Menu
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds:
+    - image
+    - pdf
+    - text
+  defaultUploadLocationSource: 'volume:22d4c992-dba7-449e-b36d-ac36420f47e5'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add Menu'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:69b15074-ffbb-4a1b-bc1f-9e4b3ca8c4e6'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

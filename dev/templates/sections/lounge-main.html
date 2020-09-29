@@ -1,64 +1,46 @@
+{% set eatImage = entry.eatImage.one() %}
+{% set drinkImage = entry.drinkImage.one() %}
+{% set shopImage = entry.shopImage.one() %}
+{% set menu = entry.menu.one() %}
+
 <section class="lounge-main">
     <div>
         <div class="hero">
-            <h1 class="hero-header">Lounge</h1>
+            <h1 class="hero-header">{{entry.mainHeader}}</h1>
+            <p class="is-large">{{entry.loungeIntroParagraph}} </p>
         </div>
         <div class="lounge-sections">
             <div class="section">
                 <div class="content">
-                    <h3>Eat</h3>
-                    <p>Smack’s Chicken Shack is a concept built around large fried chicken sandwiches! The set menu
-                        consists of items such as Nashville Hot, Big Smack, and the very popular loaded fries. Smack’s
-                        Chicken Shack runs new specials weekly and will be featuring a specialty “Let’s Hopscotch”
-                        sandwich. They are known for their creativity and were named “Best of San Antonio Food Truck” in
-                        2019 and runner-up in 2020.</p>
+                    <h3>{{entry.drinkHeader}}</h3>
+                    {{entry.drinkContent}}
                     <div class="button-container-threeD menu-button">
-                        <a href="#" target="_blank" class="play-button">View Menu
+                        <a href="{{menu.url}}" target="_blank" class="play-button">View Menu
                             <div class="left"></div>
                             <div class="bottom"></div>
                         </a>
                     </div>
                 </div>
                 <div class="img-container">
-                    <img src="./media/lounge/Lounge-Eat.jpg" alt="Eat">
+                    <img src="{{drinkImage.url}}" alt="Drink">
                 </div>
             </div>
             <div class="section" data-animateInView>
                 <div class="content">
-                    <h3>Drink</h3>
-                    <p>Our beverage features specialty cocktails, beer, wine and non-alcoholic beverages that were
-                        carefully selected and inspired by our installations throughout the space.
-                        <br>
-                        Ticket holders may take beverages with them throughout the gallery space or enjoy them in the
-                        lounge on the main floor. The lounge is also open to the public so that non-ticket holders can
-                        enjoy it. The Lounge is 18+ after 7pm.</p>
-                    <div class="button-container-threeD menu-button">
-                        <a href="#" target="_blank" class="play-button">View Menu
-                            <div class="left"></div>
-                            <div class="bottom"></div>
-                        </a>
-                    </div>
+                    <h3>{{entry.eatHeader}}</h3>
+                    {{entry.eatContent}}
                 </div>
                 <div class="img-container">
-                    <img src="./media/lounge/Lounge-Drink.jpg" alt="Drink">
+                    <img src="{{eatImage.url}}" alt="Eat">
                 </div>
             </div>
             <div class="section" data-animateInView>
                 <div class="content">
-                    <h3>Shop</h3>
-                    <p>At our onsite gift shop gallery guests, locals and tourists alike can find unique gifts and
-                        custom curiosities. Along with selling Hopscotch merchandise, we have partnered with local
-                        artists to offer unique items. Many of the installation artists will also sell their other works
-                        in the gift shop. </p>
-                    <div class="button-container-threeD shop-button">
-                        <a href="#" target="_blank" class="play-button">Coming Soon
-                            <div class="left"></div>
-                            <div class="bottom"></div>
-                        </a>
-                    </div>
+                    <h3>{{entry.shopHeader}}</h3>
+                    {{entry.shopContent}}
                 </div>
                 <div class="img-container">
-                    <img src="./media/lounge/Lounge-Shop.jpg" alt="Shop">
+                    <img src="{{shopImage.url}}" alt="Shop">
                 </div>
             </div>
         </div>

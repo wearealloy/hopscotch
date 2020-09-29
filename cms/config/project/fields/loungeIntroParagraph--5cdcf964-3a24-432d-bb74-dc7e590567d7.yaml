@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: d8d7d78d-c07e-4734-93a7-ec77e3f5f8f2
+handle: loungeIntroParagraph
+instructions: ''
+name: 'Lounge Intro Paragraph'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '3'
+  multiline: '1'
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
