@@ -1,0 +1,12 @@
+{% set heroImgs = entry.homeAnimationImages.all() %}
+<section class="hero">
+    <div>
+        <div class="hero-img-container">
+            {% for img in heroImgs %}
+            <img class="loop-img" src="{{img.url}}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+

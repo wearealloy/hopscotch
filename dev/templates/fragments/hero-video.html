@@ -1,0 +1,9 @@
+<span class="loader"></span>
+<div class="hero-video-container">
+  <video id="hero-video" width="100%" height="800"  loop muted playsinline preload="auto" {% if videoHeroPoster is not empty %}poster="{{ videoHeroPoster.url }}"{% endif %}>
+    <source src="{{ videoHero.url}}" type="video/{{ videoHero.extension }}">
+  </video>
+   <button id="hero-video-control" class="video-control play">
+      <span class="visually-hidden">Pause video</span>		
+    </button>
+</div>
